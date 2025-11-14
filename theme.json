@@ -1,220 +1,186 @@
 {
-  "siteName": "경일게임IT아카데미 - DevOps 과정",
-  "framework": "Next.js (React)",
-  "cssFramework": "Tailwind CSS",
+  "metadata": {
+    "name": "Linear Dark Theme",
+    "source": "https://linear.app/",
+    "extractedAt": "2025-11-12T06:41:13.511Z",
+    "description": "Linear의 다크 테마 디자인 시스템 - 프로페셔널하고 현대적인 SaaS 제품 디자인"
+  },
   "colors": {
     "brand": {
-      "primary": "rgb(36, 49, 143)",
-      "secondary": "rgb(78, 15, 224)",
-      "accent": "rgb(200, 80, 255)"
-    },
-    "status": {
-      "success": "rgb(0, 191, 64)",
-      "successLight": "rgb(73, 229, 125)",
-      "successBg": "rgb(217, 255, 230)",
-      "error": "rgb(255, 60, 60)",
-      "warning": "rgb(255, 204, 0)",
-      "info": "rgb(0, 102, 255)",
-      "infoBg": "rgb(246, 250, 254)"
+      "primary": "#5e6ad2",
+      "text": "#fff",
+      "accent": "#7170ff",
+      "accentHover": "#828fff",
+      "accentTint": "#18182f"
     },
     "background": {
-      "primary": "rgb(255, 255, 255)",
-      "secondary": "rgb(250, 239, 255)",
-      "tertiary": "rgb(255, 251, 250)",
-      "dark": "rgb(23, 23, 25)",
-      "gray": "rgb(246, 250, 254)"
+      "primary": "#08090a",
+      "secondary": "#1c1c1f",
+      "tertiary": "#232326",
+      "quaternary": "#28282c",
+      "quinary": "#282828",
+      "marketing": "#010102",
+      "level0": "#08090a",
+      "level1": "#0f1011",
+      "level2": "#141516",
+      "level3": "#191a1b",
+      "tint": "#141516",
+      "translucent": "rgba(255,255,255,.05)"
     },
     "text": {
-      "primary": "rgb(23, 23, 25)",
-      "secondary": "rgba(55, 56, 60, 0.61)",
-      "light": "rgb(255, 255, 255)",
-      "dark": "rgb(0, 0, 0)",
-      "muted": "rgb(152, 155, 162)"
+      "primary": "#f7f8f8",
+      "secondary": "#d0d6e0",
+      "tertiary": "#8a8f98",
+      "quaternary": "#62666d"
     },
     "border": {
-      "default": "rgba(112, 115, 124, 0.22)",
-      "light": "rgba(112, 115, 124, 0.08)",
-      "medium": "rgba(112, 115, 124, 0.16)"
-    },
-    "navigation": {
-      "background": "rgb(33, 34, 37)",
-      "text": "rgb(255, 255, 255)"
+      "primary": "#23252a",
+      "secondary": "#34343a",
+      "tertiary": "#3e3e44",
+      "translucent": "rgba(255,255,255,.05)"
     },
     "link": {
-      "color": "rgb(0, 0, 0)",
-      "textDecoration": "none",
-      "hoverColor": "rgb(36, 49, 143)"
+      "primary": "#828fff",
+      "hover": "#fff"
+    },
+    "semantic": {
+      "red": "#eb5757",
+      "orange": "#fc7840",
+      "yellow": "#f2c94c",
+      "green": "#4cb782",
+      "blue": "#4ea7fc",
+      "indigo": "#5e6ad2"
     }
   },
   "typography": {
     "fontFamily": {
-      "primary": "\"Pretendard Variable\", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
-      "fallback": "system-ui, -apple-system, sans-serif"
+      "regular": "\"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "monospace": "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, monospace",
+      "serifDisplay": "\"Tiempos Headline\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif"
     },
-    "base": {
-      "fontSize": "16px",
-      "lineHeight": "24px",
-      "fontWeight": "400"
+    "fontWeight": {
+      "light": "300",
+      "normal": "400",
+      "medium": "510",
+      "semibold": "590",
+      "bold": "680"
     },
-    "headings": {
-      "h1": {
-        "fontSize": "36px",
-        "lineHeight": "48px",
-        "fontWeight": "700",
-        "color": "rgb(255, 255, 255)"
+    "fontSize": {
+      "micro": "0.6875rem",
+      "mini": "0.75rem",
+      "small": "0.8125rem",
+      "regular": "0.9375rem",
+      "large": "1.125rem",
+      "title1": "2.25rem",
+      "title2": "1.5rem",
+      "title3": "1.25rem"
+    },
+    "textStyles": {
+      "tiny": {
+        "size": "0.625rem",
+        "lineHeight": "1.5",
+        "letterSpacing": "-0.015em"
       },
-      "h2": {
-        "fontSize": "40px",
-        "lineHeight": "52px",
-        "fontWeight": "700",
-        "color": "rgb(23, 23, 25)"
+      "small": {
+        "size": "0.875rem",
+        "lineHeight": "1.5",
+        "letterSpacing": "-0.013em"
       },
-      "h3": {
-        "fontSize": "28px",
-        "lineHeight": "38.08px",
-        "fontWeight": "700",
-        "color": "rgb(0, 0, 0)"
+      "regular": {
+        "size": "0.9375rem",
+        "lineHeight": "1.6",
+        "letterSpacing": "-0.011em"
       },
-      "h4": {
-        "fontSize": "14px",
-        "lineHeight": "20px",
-        "fontWeight": "500",
-        "color": "rgba(55, 56, 60, 0.61)"
-      },
-      "h5": {
-        "fontSize": "24px",
-        "lineHeight": "32px",
-        "fontWeight": "600",
-        "color": "rgba(46, 47, 51, 0.88)"
+      "large": {
+        "size": "1.0625rem",
+        "lineHeight": "1.6",
+        "letterSpacing": "0"
       }
     },
-    "fontWeights": {
-      "light": "300",
-      "regular": "400",
-      "medium": "500",
-      "semibold": "600",
-      "bold": "700"
+    "titles": {
+      "title1": {
+        "size": "1.0625rem",
+        "lineHeight": "1.4",
+        "letterSpacing": "-0.012em"
+      },
+      "title2": {
+        "size": "1.3125rem",
+        "lineHeight": "1.33",
+        "letterSpacing": "-0.012em"
+      },
+      "title3": {
+        "size": "1.5rem",
+        "lineHeight": "1.33",
+        "letterSpacing": "-0.012em"
+      },
+      "title4": {
+        "size": "2rem",
+        "lineHeight": "1.125",
+        "letterSpacing": "-0.022em"
+      },
+      "title5": {
+        "size": "2.5rem",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.022em"
+      },
+      "title6": {
+        "size": "3rem",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.022em"
+      }
     }
   },
   "spacing": {
-    "xs": "4px",
-    "sm": "8px",
-    "md": "16px",
-    "lg": "24px",
-    "xl": "32px",
-    "2xl": "40px",
-    "3xl": "48px",
-    "4xl": "60px",
-    "5xl": "80px",
-    "6xl": "120px"
-  },
-  "layout": {
-    "maxWidth": "1200px",
-    "containerPadding": "20px",
-    "sectionPadding": {
-      "top": "60px",
-      "bottom": "60px"
+    "page": {
+      "paddingInline": "24px",
+      "paddingBlock": "64px",
+      "maxWidth": "1024px"
     },
-    "navigation": {
-      "height": "60px",
-      "position": "sticky"
-    }
-  },
-  "components": {
-    "button": {
-      "primary": {
-        "backgroundColor": "rgb(255, 255, 255)",
-        "color": "rgb(36, 49, 143)",
-        "padding": "12px 24px",
-        "borderRadius": "8px",
-        "fontSize": "16px",
-        "fontWeight": "600",
-        "border": "1px solid rgba(112, 115, 124, 0.22)"
-      },
-      "secondary": {
-        "backgroundColor": "transparent",
-        "color": "rgb(36, 49, 143)",
-        "padding": "12px 24px",
-        "borderRadius": "8px",
-        "fontSize": "16px",
-        "fontWeight": "600",
-        "border": "1px solid rgb(36, 49, 143)"
-      },
-      "cta": {
-        "backgroundColor": "rgb(36, 49, 143)",
-        "color": "rgb(255, 255, 255)",
-        "padding": "16px 32px",
-        "borderRadius": "8px",
-        "fontSize": "18px",
-        "fontWeight": "600",
-        "border": "none"
-      }
+    "header": {
+      "height": "64px"
     },
-    "link": {
-      "color": "rgb(0, 0, 0)",
-      "textDecoration": "none",
-      "hoverColor": "rgb(36, 49, 143)"
-    },
-    "card": {
-      "backgroundColor": "rgb(255, 255, 255)",
-      "borderRadius": "12px",
-      "padding": "24px",
-      "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.08)",
-      "border": "1px solid rgba(112, 115, 124, 0.12)"
-    },
-    "badge": {
-      "default": {
-        "backgroundColor": "rgb(246, 250, 254)",
-        "color": "rgb(36, 49, 143)",
-        "padding": "4px 8px",
-        "borderRadius": "4px",
-        "fontSize": "13px",
-        "fontWeight": "600"
-      },
-      "success": {
-        "backgroundColor": "rgb(217, 255, 230)",
-        "color": "rgb(0, 150, 50)",
-        "padding": "4px 8px",
-        "borderRadius": "4px",
-        "fontSize": "13px",
-        "fontWeight": "600"
-      }
-    }
-  },
-  "animations": {
-    "transition": {
-      "default": "0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-      "fast": "0.15s cubic-bezier(0.4, 0, 0.2, 1)",
-      "slow": "0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-    },
-    "easing": {
-      "default": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "in": "cubic-bezier(0.4, 0, 1, 1)",
-      "out": "cubic-bezier(0, 0, 0.2, 1)",
-      "inOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+    "prose": {
+      "maxWidth": "624px"
     }
   },
   "borderRadius": {
-    "none": "0",
-    "sm": "4px",
-    "md": "8px",
-    "lg": "12px",
-    "xl": "16px",
-    "2xl": "24px",
-    "full": "9999px"
+    "circle": "50%",
+    "rounded": "9999px",
+    "small": "4px",
+    "medium": "8px",
+    "large": "12px",
+    "xlarge": "16px",
+    "xxlarge": "24px"
   },
   "shadows": {
-    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-    "default": "0 2px 8px rgba(0, 0, 0, 0.08)",
-    "md": "0 4px 12px rgba(0, 0, 0, 0.1)",
-    "lg": "0 10px 25px rgba(0, 0, 0, 0.15)",
-    "xl": "0 20px 40px rgba(0, 0, 0, 0.2)"
+    "none": "0px 0px 0px transparent",
+    "low": "0px 2px 4px rgba(0,0,0,.1)",
+    "medium": "0px 4px 24px rgba(0,0,0,.2)",
+    "high": "0px 7px 32px rgba(0,0,0,.35)"
   },
-  "breakpoints": {
-    "sm": "640px",
-    "md": "768px",
-    "lg": "1024px",
-    "xl": "1280px",
-    "2xl": "1536px"
+  "animation": {
+    "timing": {
+      "quick": "0.1s",
+      "regular": "0.25s"
+    },
+    "easing": {
+      "easeInQuad": "cubic-bezier(.55,.085,.68,.53)",
+      "easeOutQuad": "cubic-bezier(.25,.46,.45,.94)",
+      "easeInOutQuad": "cubic-bezier(.455,.03,.515,.955)",
+      "easeOutCubic": "cubic-bezier(.215,.61,.355,1)",
+      "easeOutQuart": "cubic-bezier(.165,.84,.44,1)",
+      "easeOutExpo": "cubic-bezier(.19,1,.22,1)"
+    }
+  },
+  "zIndex": {
+    "base": "1",
+    "footer": "50",
+    "header": "100",
+    "overlay": "500",
+    "popover": "600",
+    "dialog": "700",
+    "toast": "800",
+    "tooltip": "1100"
   }
 }
+

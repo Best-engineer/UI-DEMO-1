@@ -26,41 +26,25 @@ const Card: React.FC<CardProps> = ({
   image,
   imagePosition = 'top'
 }) => {
-  const baseStyles = `
-    border
-    transition-all
-    duration-[var(--animation-transition-default)]
-    ease-[var(--animation-easing-default)]
-    overflow-hidden
-  `;
+  const baseStyles = 'rounded-lg border transition-all overflow-hidden';
   
   const variantStyles = {
-    default: `
-      bg-[var(--color-bg-primary)]
-      border-[rgba(112,115,124,0.12)]
-      rounded-[var(--radius-lg)]
-      shadow-[var(--shadow-default)]
-    `,
-    elevated: `
-      bg-[var(--color-bg-primary)]
-      border-[rgba(112,115,124,0.12)]
-      rounded-[var(--radius-lg)]
-      shadow-[var(--shadow-md)]
-    `
+    default: 'bg-[var(--color-bg-secondary)] border-[var(--color-border-primary)]',
+    elevated: 'bg-[var(--color-bg-tertiary)] border-[var(--color-border-secondary)] shadow-[var(--shadow-medium)]'
   };
 
   const paddingStyles = {
     none: '',
     small: 'p-3',
-    medium: 'p-6',
-    large: 'p-8'
+    medium: 'p-4',
+    large: 'p-6'
   };
 
-  const interactiveStyle = onClick ? 'cursor-pointer hover:shadow-[var(--shadow-md)]' : '';
+  const interactiveStyle = onClick ? 'cursor-pointer hover:border-[var(--color-border-secondary)]' : '';
 
   const imageComponent = image ? (
     <div className={`w-full ${imagePosition === 'top' ? 'mb-0' : 'mt-0'}`}>
-      <div className="relative w-full h-48 bg-[var(--color-bg-gray)]">
+      <div className="relative w-full h-48 bg-[var(--color-bg-level1)]">
         <Image
           src={image.src}
           alt={image.alt}
@@ -74,7 +58,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className={`${baseStyles} ${variantStyles[variant]} ${paddingStyles[padding]} ${interactiveStyle} ${className} ${image ? 'p-0' : ''}`.replace(/\s+/g, ' ').trim()}
+      className={`${baseStyles} ${variantStyles[variant]} ${paddingStyles[padding]} ${interactiveStyle} ${className} ${image ? 'p-0' : ''}`}
       onClick={onClick}
     >
       {imagePosition === 'top' && imageComponent}
