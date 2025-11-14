@@ -12,7 +12,7 @@
       "title": "JAVA SW 개발자 양성",
       "fullTitle": "(디지털컨버전스) React & Spring 활용 자바(Java) 개발자",
       "description": "개발자로의 취업을 준비하는 분들이 알아야 하는 필수 지식과 기술을 이론수업과 프로젝트 실습을 통해 습득하는 소프트웨어 자바개발자 양성 과정 입니다.",
-      "tags": ["#JAVA", "#ORACLE", "#REACT", "#SPRING", "#HTML/CSS"],
+      "tags": ["#Java", "#React", "#Spring"],
       "supportType": "국비지원",
       "benefits": {
         "funding": "전액 국비지원",
@@ -117,7 +117,7 @@
       "title": "정보보안 전문가 양성",
       "fullTitle": "(정보시스템구축) 정보시스템 구축·운영 기반 정보보안 전문가",
       "description": "현업에서 필요로 하는 정보보안 관련 기초 지식, 실제 보안위협 사례, 대응 실력을 이론수업과 프로젝트 실습을 통해 습득하는 정보보안 전문가 양성 과정 입니다.",
-      "tags": ["#VMware", "#Linux", "#VPN", "#보안인프라", "#모의해킹"],
+      "tags": ["#VMware", "#Linux", "#모의해킹"],
       "supportType": "국비지원",
       "benefits": {
         "funding": "전액 국비지원",
@@ -228,7 +228,7 @@
       "title": "AWS 클라우드 기반 과정(KDT)",
       "fullTitle": "AWS 클라우드 기반 백엔드 개발자 양성(KDT)",
       "description": "AWS 클라우드 환경에서의 백엔드 개발 역량을 갖춘 실무형 개발자를 양성하는 K-Digital Training 과정입니다.",
-      "tags": ["#AWS", "#Cloud", "#Backend", "#DevOps", "#Microservices"],
+      "tags": ["#AWS", "#Cloud", "#Backend"],
       "supportType": "KDT 국비지원",
       "benefits": {
         "funding": "전액 국비지원",
@@ -244,7 +244,7 @@
       "title": "프로젝트 기반 AWS 풀스택 웹 개발자 양성 (KDT)",
       "fullTitle": "프로젝트 기반 AWS 풀스택 웹 개발자 양성(KDT)",
       "description": "프론트엔드부터 백엔드, 클라우드 인프라까지 전 영역을 학습하는 풀스택 개발자 양성 과정입니다.",
-      "tags": ["#AWS", "#FullStack", "#React", "#Node.js", "#Cloud"],
+      "tags": ["#AWS", "#React", "#Node.js"],
       "supportType": "KDT 국비지원",
       "benefits": {
         "funding": "전액 국비지원",
@@ -260,7 +260,7 @@
       "title": "Python & Elasticsearch 기반 금융솔루션 개발자(KDT)",
       "fullTitle": "Python & Elasticsearch 기반 금융솔루션 개발자(KDT)",
       "description": "Python과 Elasticsearch를 활용한 금융권 솔루션 개발 전문가를 양성하는 과정입니다.",
-      "tags": ["#Python", "#Elasticsearch", "#FinTech", "#DataAnalysis", "#Backend"],
+      "tags": ["#Python", "#Elasticsearch", "#FinTech"],
       "supportType": "KDT 국비지원",
       "benefits": {
         "funding": "전액 국비지원",
@@ -276,7 +276,7 @@
       "title": "C언어 핵심요점 정리에서 데이터 시각화까지(KDC)",
       "fullTitle": "C언어 핵심요점 정리에서 데이터 시각화까지(KDC)",
       "description": "C언어 기초부터 데이터 시각화까지 학습하는 K-Digital Credit 단기 집중 과정입니다.",
-      "tags": ["#C언어", "#DataVisualization", "#Programming", "#Basics"],
+      "tags": ["#C언어", "#DataVisualization", "#Basics"],
       "supportType": "KDC 국비지원",
       "benefits": {
         "funding": "국비지원 90% + 자부담 10%",
@@ -291,7 +291,7 @@
       "title": "DBA의 첫걸음 SQL 마스터하기(KDC)",
       "fullTitle": "DBA의 첫걸음 SQL 마스터하기(KDC)",
       "description": "데이터베이스 관리자가 되기 위한 SQL 기초 및 실무 역량을 학습하는 과정입니다.",
-      "tags": ["#SQL", "#Database", "#DBA", "#RDBMS", "#DataManagement"],
+      "tags": ["#SQL", "#Database", "#DBA"],
       "supportType": "KDC 국비지원",
       "benefits": {
         "funding": "국비지원 90% + 자부담 10%",

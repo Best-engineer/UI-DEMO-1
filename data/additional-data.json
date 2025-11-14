@@ -85,30 +85,129 @@
   ],
   "testimonials": [
     {
-      "name": "박수강",
-      "course": "JAVA SW 개발자 양성",
-      "batch": "23기",
-      "content": "비전공자였지만 체계적인 커리큘럼과 강사님의 도움으로 취업에 성공했습니다. 실무 프로젝트 경험이 정말 도움이 되었어요!",
-      "company": "네이버",
-      "position": "백엔드 개발자",
+      "name": "2025년 10월 수료생",
+      "course": "빅데이터 기반(파이썬·자바·웹) 엘라스틱 검색엔진 개발자_3회차_종일",
+      "batch": "",
+      "content": "기초지식과 협업능력 향상",
+      "company": "",
+      "position": "",
       "rating": 5
     },
     {
-      "name": "최개발",
-      "course": "정보보안 전문가 양성",
-      "batch": "22기",
-      "content": "20년 경력의 강사님께서 실무에서 바로 쓸 수 있는 지식을 알려주셔서 취업 후 적응이 빨랐습니다.",
-      "company": "삼성SDS",
-      "position": "보안 엔지니어",
+      "name": "2025년 10월 수료생",
+      "course": "빅데이터 기반(파이썬·자바·웹) 엘라스틱 검색엔진 개발자_3회차_종일",
+      "batch": "",
+      "content": "비전공자도 기본기 배움",
+      "company": "",
+      "position": "",
       "rating": 5
     },
     {
-      "name": "정프론트",
-      "course": "AWS 풀스택 웹 개발자 양성",
-      "batch": "21기",
-      "content": "프론트엔드부터 백엔드, 클라우드까지 전 영역을 배울 수 있어서 취업 선택지가 넓어졌습니다.",
-      "company": "카카오",
-      "position": "풀스택 개발자",
+      "name": "2025년 10월 수료생",
+      "course": "빅데이터 기반(파이썬·자바·웹) 엘라스틱 검색엔진 개발자_3회차_종일",
+      "batch": "",
+      "content": "유익한 6개월 지도",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "빅데이터 기반(파이썬·자바·웹) 엘라스틱 검색엔진 개발자_3회차_종일",
+      "batch": "",
+      "content": "팀 프로젝트로 배움",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "빅데이터 기반(파이썬·자바·웹) 엘라스틱 검색엔진 개발자_3회차_종일",
+      "batch": "",
+      "content": "짧은 시간 많은 배움",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "빅데이터 기반(파이썬·자바·웹) 엘라스틱 검색엔진 개발자_3회차_종일",
+      "batch": "",
+      "content": "유익한 시간",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "(디지털컨버전스) React & Spring 활용 자바(Java) 개발자 양성과정(4)_1회차",
+      "batch": "",
+      "content": "배운 것 많아 다행",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "(디지털컨버전스) React & Spring 활용 자바(Java) 개발자 양성과정(4)_1회차",
+      "batch": "",
+      "content": "훌륭한 지도 배움",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "(디지털컨버전스) React & Spring 활용 자바(Java) 개발자 양성과정(4)_1회차",
+      "batch": "",
+      "content": "협업과 시행착오 경험",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "(디지털컨버전스) React & Spring 활용 자바(Java) 개발자 양성과정(4)_1회차",
+      "batch": "",
+      "content": "코딩 기초 배움",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "(디지털컨버전스) React & Spring 활용 자바(Java) 개발자 양성과정(4)_1회차",
+      "batch": "",
+      "content": "처음엔 몰랐지만 배움",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "(디지털컨버전스) React & Spring 활용 자바(Java) 개발자 양성과정(4)_1회차",
+      "batch": "",
+      "content": "프로젝트 좋은 기회",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "AWS 클라우드 기반 Devops 개발자 양성 과정_3회차",
+      "batch": "",
+      "content": "7개월 성장 만족",
+      "company": "",
+      "position": "",
+      "rating": 5
+    },
+    {
+      "name": "2025년 10월 수료생",
+      "course": "AWS 클라우드 기반 Devops 개발자 양성 과정_3회차",
+      "batch": "",
+      "content": "추천 훈련과정",
+      "company": "",
+      "position": "",
       "rating": 5
     }
   ],

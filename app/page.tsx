@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Button, Card, Badge, Typography, Hero, Navbar, Footer, Modal, Input, Alert, Carousel } from '@/components/ui';
+import { Button, Card, Badge, Typography, Hero, Navbar, Footer, Modal, Input, Alert } from '@/components/ui';
 import coursesData from '@/data/courses.json';
 import additionalData from '@/data/additional-data.json';
 
@@ -40,6 +40,7 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showStickyBanner, setShowStickyBanner] = useState(false);
   const [activeStickyNav, setActiveStickyNav] = useState('courses');
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const courses = coursesData.courses as Course[];
   const companyInfo = coursesData.common_info.company_info;
@@ -77,20 +78,27 @@ export default function Home() {
       
       setShowStickyBanner(shouldShow && !nearBottom);
       
-      // Sticky navigation active state
+      // Sticky navigation active state - 스크롤 위치에 따라 실시간 업데이트
       const sections = ['courses', 'curriculum', 'locations', 'support'];
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + 150; // 헤더 높이 고려
+      let activeSection = 'courses'; // 기본값
       
-      for (const section of sections) {
+      // 역순으로 체크하여 가장 아래에 있는 섹션을 활성화
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveStickyNav(section);
+          const { offsetTop } = element;
+          // 섹션의 상단이 스크롤 위치를 지나갔으면 활성화
+          if (scrollPosition >= offsetTop) {
+            activeSection = section;
             break;
           }
         }
       }
+      
+      // 스크롤할 때마다 실시간으로 상태 업데이트
+      setActiveStickyNav(activeSection);
     };
     window.addEventListener('scroll', handleScroll);
     // 초기 상태 확인
@@ -103,9 +111,26 @@ export default function Home() {
   };
 
   const scrollToSection = (sectionId: string) => {
+    // 클릭 시 즉시 활성화 상태 업데이트
+    setActiveStickyNav(sectionId);
+    setIsScrolling(true);
+    
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // 헤더 높이를 고려하여 스크롤 위치 조정
+      const headerOffset = 150;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // 스크롤 완료 후 플래그 해제 (약 800ms 후)
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 800);
     }
   };
 
@@ -167,7 +192,7 @@ export default function Home() {
         <div className="max-w-[1024px] mx-auto px-6">
           <div className="text-center mb-12">
             <Typography variant="h1" className="mb-4 whitespace-pre-line">
-              KH정보교육원{'\n'}IT 전문가 양성 프로그램
+              KH정보교육원{'\n'}IT 전문가{'\n'} 양성 프로그램
             </Typography>
           </div>
 
@@ -176,104 +201,113 @@ export default function Home() {
               variant="primary"
               size="large"
               onClick={() => handleConsultationClick()}
-              className="bg-[var(--color-semantic-orange)] hover:bg-[var(--color-semantic-orange)]/90"
+              className="px-20 sm:px-16 md:px-20 lg:px-24 !font-bold"
             >
               수강료 전액지원받기
             </Button>
           </div>
 
           {/* Benefits Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <Card padding="medium" variant="elevated" className="text-center">
-              <div className="text-4xl mb-3 text-[var(--color-semantic-green)]">👥</div>
-              <Typography variant="body" className="font-semibold">
-                30명 소수정예
-              </Typography>
-            </Card>
+          <div className="space-y-4 sm:space-y-6">
+            {/* 상위 3개 카드 */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 justify-items-center">
+              <Card padding="small" variant="elevated" className="text-center w-full max-w-[120px] sm:max-w-[130px] md:max-w-[150px] py-2 sm:py-3">
+                <div className="text-4xl sm:text-xl md:text-5xl mb-4 sm:mb-5 md:mb-6 text-[var(--color-semantic-green)]">👥</div>
+                <Typography variant="body" className="font-semibold text-[10px] sm:text-xs md:text-sm">
+                  30명 소수정예
+                </Typography>
+              </Card>
 
-            <Card padding="medium" variant="elevated" className="text-center">
-              <div className="text-4xl mb-3 text-[var(--color-semantic-green)]">💰</div>
-              <Typography variant="body" className="font-semibold mb-1">
-                훈련장려금 지원
-              </Typography>
-              <Typography variant="small" className="text-[var(--color-semantic-green)] font-semibold">
-                최대 81만 6천원
-              </Typography>
-            </Card>
+              <Card padding="small" variant="elevated" className="text-center w-full max-w-[120px] sm:max-w-[130px] md:max-w-[150px] py-2 sm:py-3">
+                <div className="text-4xl sm:text-xl md:text-2xl mb-4 sm:mb-5 md:mb-6 text-[var(--color-semantic-green)]">💰</div>
+                <Typography variant="body" className="font-semibold mb-0.5 text-[10px] sm:text-xs md:text-sm">
+                  훈련장려금 지원
+                </Typography>
+                <Typography variant="small" className="text-[var(--color-semantic-green)] font-semibold text-[9px] sm:text-[10px] md:text-xs">
+                  최대 81만 6천원
+                </Typography>
+              </Card>
 
-            <Card padding="medium" variant="elevated" className="text-center">
-              <div className="text-4xl mb-3 text-[var(--color-semantic-green)]">💻</div>
-              <Typography variant="body" className="font-semibold">
-                노트북 대여
-              </Typography>
-            </Card>
+              <Card padding="small" variant="elevated" className="text-center w-full max-w-[120px] sm:max-w-[130px] md:max-w-[150px] py-2 sm:py-3">
+                <div className="text-4xl sm:text-xl md:text-2xl mb-4 sm:mb-5 md:mb-6 text-[var(--color-semantic-green)]">💻</div>
+                <Typography variant="body" className="font-semibold text-[10px] sm:text-xs md:text-sm">
+                  노트북 대여
+                </Typography>
+              </Card>
+            </div>
 
-            <Card padding="medium" variant="elevated" className="text-center">
-              <div className="text-4xl mb-3 text-[var(--color-semantic-green)]">🛏️</div>
-              <Typography variant="body" className="font-semibold mb-1">
-                생활관 비용 지원
-              </Typography>
-              <Typography variant="small" className="text-[var(--color-semantic-green)] font-semibold">
-                최대 50% 지원
-              </Typography>
-            </Card>
+            {/* 아래 2개 카드 - 중앙 정렬 */}
+            <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap">
+              <Card padding="small" variant="elevated" className="text-center w-full max-w-[120px] sm:max-w-[130px] md:max-w-[150px] py-2 sm:py-3">
+                <div className="text-4xl sm:text-xl md:text-3xl mb-4 sm:mb-5 md:mb-6 text-[var(--color-semantic-green)]">🛏️</div>
+                <Typography variant="body" className="font-semibold mb-0.5 text-[10px] sm:text-xs md:text-sm">
+                  생활관 비용 지원
+                </Typography>
+                <Typography variant="small" className="text-[var(--color-semantic-green)] font-semibold text-[9px] sm:text-[10px] md:text-xs">
+                  최대 50% 지원
+                </Typography>
+              </Card>
 
-            <Card padding="medium" variant="elevated" className="text-center">
-              <div className="text-4xl mb-3 text-[var(--color-semantic-green)] font-bold">0</div>
-              <Typography variant="body" className="font-semibold mb-1">
-                수강료 전액지원
-              </Typography>
-              <Typography variant="small" className="text-[var(--color-text-tertiary)] line-through">
-                12,130,560원
-              </Typography>
-            </Card>
+              <Card padding="small" variant="elevated" className="text-center w-full max-w-[120px] sm:max-w-[130px] md:max-w-[150px] py-2 sm:py-3">
+                <div className="flex items-baseline justify-center gap-1 mb-4 sm:mb-5 md:mb-6">
+                  <span className="text-4xl sm:text-xl md:text-2xl text-[var(--color-semantic-green)] font-bold">0</span>
+                  <span className="text-sm sm:text-base md:text-lg text-[var(--color-semantic-green)] font-semibold">원</span>
+                </div>
+                <Typography variant="body" className="font-semibold mb-0.5 text-[10px] sm:text-xs md:text-sm">
+                  수강료 전액지원
+                </Typography>
+                <Typography variant="small" className="text-[var(--color-text-tertiary)] line-through text-[9px] sm:text-[10px] md:text-xs">
+                  12,130,560원
+                </Typography>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Sticky Navigation */}
       <div className="sticky top-[var(--spacing-header-height)] z-[var(--z-index-header)] bg-[var(--color-bg-secondary)] border-b border-[var(--color-border-primary)]">
-        <div className="max-w-[1024px] mx-auto px-6">
-          <div className="flex gap-8 overflow-x-auto">
+        <div className="max-w-[1024px] mx-auto px-3 sm:px-6">
+          <div className="flex justify-center gap-2 sm:gap-4 md:gap-8">
             <button
               onClick={() => scrollToSection('courses')}
-              className={`py-4 px-2 border-b-2 transition-colors whitespace-nowrap ${
+              className={`py-3 sm:py-4 px-1 sm:px-2 border-b-2 transition-all duration-200 whitespace-nowrap text-xs sm:text-base ${
                 activeStickyNav === 'courses'
-                  ? 'border-[var(--color-brand-accent)] text-[var(--color-brand-accent)]'
+                  ? 'border-[var(--color-semantic-green)] text-[var(--color-semantic-green)] font-semibold'
                   : 'border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
               }`}
             >
-              <Typography variant="body">강의 소개</Typography>
+              강의 소개
             </button>
             <button
               onClick={() => scrollToSection('curriculum')}
-              className={`py-4 px-2 border-b-2 transition-colors whitespace-nowrap ${
+              className={`py-3 sm:py-4 px-1 sm:px-2 border-b-2 transition-all duration-200 whitespace-nowrap text-xs sm:text-base ${
                 activeStickyNav === 'curriculum'
-                  ? 'border-[var(--color-brand-accent)] text-[var(--color-brand-accent)]'
+                  ? 'border-[var(--color-semantic-green)] text-[var(--color-semantic-green)] font-semibold'
                   : 'border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
               }`}
             >
-              <Typography variant="body">커리큘럼</Typography>
+              커리큘럼
             </button>
             <button
               onClick={() => scrollToSection('locations')}
-              className={`py-4 px-2 border-b-2 transition-colors whitespace-nowrap ${
+              className={`py-3 sm:py-4 px-1 sm:px-2 border-b-2 transition-all duration-200 whitespace-nowrap text-xs sm:text-base ${
                 activeStickyNav === 'locations'
-                  ? 'border-[var(--color-brand-accent)] text-[var(--color-brand-accent)]'
+                  ? 'border-[var(--color-semantic-green)] text-[var(--color-semantic-green)] font-semibold'
                   : 'border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
               }`}
             >
-              <Typography variant="body">지점 안내</Typography>
+              지점 안내
             </button>
             <button
               onClick={() => scrollToSection('support')}
-              className={`py-4 px-2 border-b-2 transition-colors whitespace-nowrap ${
+              className={`py-3 sm:py-4 px-1 sm:px-2 border-b-2 transition-all duration-200 whitespace-nowrap text-xs sm:text-base ${
                 activeStickyNav === 'support'
-                  ? 'border-[var(--color-brand-accent)] text-[var(--color-brand-accent)]'
+                  ? 'border-[var(--color-semantic-green)] text-[var(--color-semantic-green)] font-semibold'
                   : 'border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
               }`}
             >
-              <Typography variant="body">국비지원 안내</Typography>
+              국비지원 안내
             </button>
           </div>
         </div>
@@ -322,8 +356,8 @@ export default function Home() {
           <Typography variant="h3" className="mb-6">
             그러나,
           </Typography>
-          <Typography variant="h2" className="mb-8 whitespace-pre-line">
-            기업이 개발자에게 요구하는 역량을{'\n'}독학으로 채우기는 어렵습니다.
+          <Typography variant="h4" className="mb-8 whitespace-pre-line">
+            기업이 개발자에게{'\n'}요구하는 역량을{'\n'}독학으로 채우기는 어렵습니다.
           </Typography>
           <Card padding="large" variant="default" className="max-w-2xl mx-auto">
             <Typography variant="small" color="tertiary">
@@ -344,13 +378,13 @@ export default function Home() {
       </section>
 
       {/* CTA Section 1 */}
-      <section className="py-16 bg-gradient-to-r from-[var(--color-semantic-orange)] to-[var(--color-semantic-orange)]/80">
-        <div className="max-w-[1024px] mx-auto px-6 text-center">
+      <section className="py-8 bg-black">
+        <div className="max-w-[1024px] mx-auto px-6 flex justify-center">
           <Button
             variant="primary"
             size="large"
             onClick={() => handleConsultationClick()}
-            className="bg-white text-[var(--color-semantic-orange)] hover:bg-white/90"
+            className="px-8 sm:px-16 md:px-20 lg:px-24 !font-bold whitespace-nowrap text-center w-auto mx-auto"
           >
             KH정보교육원 10초만에 지원하기
           </Button>
@@ -358,7 +392,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-[var(--color-bg-primary)]">
+      <section className="py-20 bg-[var(--color-bg-primary)] overflow-hidden">
         <div className="max-w-[1024px] mx-auto px-6">
           <div className="text-center mb-12">
             <Typography variant="h2" className="mb-4 whitespace-pre-line">
@@ -366,43 +400,71 @@ export default function Home() {
             </Typography>
           </div>
 
-          <Carousel
-            items={testimonials.map((testimonial, index) => ({
-              id: index,
-              content: (
-                <Card padding="large" variant="elevated" className="mx-4">
-                  <div className="flex items-center gap-2 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <span key={i} className="text-[var(--color-semantic-yellow)]">⭐</span>
-                    ))}
-                  </div>
-                  <Typography variant="body" className="mb-4">
-                    "{testimonial.content}"
-                  </Typography>
-                  <div className="flex items-center justify-between pt-4 border-t border-[var(--color-border-primary)]">
-                    <div>
-                      <Typography variant="h6">{testimonial.name}</Typography>
-                      <Typography variant="small" color="tertiary">
-                        {testimonial.course} {testimonial.batch}
-                      </Typography>
-                    </div>
-                    <div className="text-right">
-                      <Typography variant="small" className="font-semibold">
-                        {testimonial.company}
-                      </Typography>
-                      <Typography variant="small" color="tertiary">
-                        {testimonial.position}
-                      </Typography>
-                    </div>
-                  </div>
-                </Card>
-              )
-            }))}
-            autoPlay
-            autoPlayInterval={5000}
-            showIndicators
-            showNavigation
-          />
+          <div className="space-y-4">
+            {/* Top Row - Moves Left */}
+            <div className="overflow-hidden">
+              <div className="flex animate-scroll-left gap-3" style={{width: 'max-content'}}>
+                {[...Array(10)].map((_, loopIndex) => 
+                  testimonials.slice(0, Math.ceil(testimonials.length / 2)).map((testimonial, index) => (
+                    <Card 
+                      key={`top-${loopIndex}-${index}`} 
+                      padding="medium" 
+                      variant="elevated" 
+                      className="min-w-[240px] flex-shrink-0 !bg-[rgb(70_71_76/var(--tw-bg-opacity,1))] border border-[var(--color-border-primary)]"
+                    >
+                      <div className="text-center">
+                        <Typography variant="body" className="mb-3 text-sm leading-relaxed text-center line-clamp-2 min-h-[2.5rem]">
+                          "{testimonial.content}"
+                        </Typography>
+                        <div className="flex items-center justify-center gap-1 mb-2">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <span key={i} className="text-[var(--color-semantic-yellow)] text-xl">★</span>
+                          ))}
+                        </div>
+                        <div className="pt-3 border-t border-[var(--color-border-primary)]">
+                          <Typography variant="small" className="text-xs text-center">
+                            {testimonial.name}
+                          </Typography>
+                        </div>
+                      </div>
+                    </Card>
+                  ))
+                )}
+              </div>
+            </div>
+
+            {/* Bottom Row - Moves Right */}
+            <div className="overflow-hidden">
+              <div className="flex animate-scroll-right gap-3" style={{width: 'max-content'}}>
+                {[...Array(10)].map((_, loopIndex) => 
+                  testimonials.slice(Math.ceil(testimonials.length / 2)).map((testimonial, index) => (
+                    <Card 
+                      key={`bottom-${loopIndex}-${index}`} 
+                      padding="medium" 
+                      variant="elevated" 
+                      className="min-w-[240px] flex-shrink-0 !bg-[rgb(70_71_76/var(--tw-bg-opacity,1))] border border-[var(--color-border-primary)]"
+                    >
+                      <div className="text-center">
+                        <Typography variant="body" className="mb-3 text-sm leading-relaxed text-center line-clamp-2 min-h-[2.5rem]">
+                          "{testimonial.content}"
+                        </Typography>
+                        <div className="flex items-center justify-center gap-1 mb-2">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <span key={i} className="text-[var(--color-semantic-yellow)] text-xl">★</span>
+                          ))}
+                        </div>
+                        <div className="pt-3 border-t border-[var(--color-border-primary)]">
+                          <Typography variant="small" className="text-xs text-center">
+                            {testimonial.name}
+                          </Typography>
+                        </div>
+                      </div>
+                    </Card>
+                  ))
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -441,6 +503,7 @@ export default function Home() {
             variant="primary"
             size="large"
             onClick={() => handleConsultationClick()}
+            className="px-8 sm:px-16 md:px-20 lg:px-24 !font-bold whitespace-nowrap text-center w-auto mx-auto"
           >
             KH정보교육원 10초만에 지원하기
           </Button>
@@ -495,6 +558,88 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Courses Section */}
+      <section id="courses" className="py-20 bg-[var(--color-bg-primary)]">
+        <div className="max-w-[1024px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <Typography variant="h2" className="mb-4">
+              강의 프로그램
+            </Typography>
+            <Typography variant="body" color="secondary" className="text-lg">
+              다양한 IT 분야의 전문가 양성 과정을 제공합니다
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {courses.map((course) => (
+              <Card
+                key={course.id}
+                padding="large"
+                variant="elevated"
+                className="flex flex-col h-full hover:border-[var(--color-brand-accent)] transition-colors"
+              >
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-3">
+                    <Badge variant={getSupportTypeBadgeVariant(course.supportType)} size="small">
+                      {course.supportType}
+                    </Badge>
+                  </div>
+                  
+                  <Typography variant="h5" className="mb-2">
+                    {course.title}
+                  </Typography>
+                  
+                  <Typography variant="small" color="tertiary" className="mb-4">
+                    {course.category}
+                  </Typography>
+                  
+                  <Typography variant="body" color="secondary" className="mb-4 line-clamp-3">
+                    {course.description}
+                  </Typography>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {course.tags.slice(0, 3).map((tag, index) => (
+                      <Badge key={index} variant="default" size="small">
+                        {tag}
+                      </Badge>
+                    ))}
+                    {course.tags.length > 3 && (
+                      <Badge variant="default" size="small">
+                        +{course.tags.length - 3}
+                      </Badge>
+                    )}
+                  </div>
+
+                  {course.benefits && (
+                    <div className="mb-4 p-3 bg-[var(--color-bg-level1)] rounded-md">
+                      <Typography variant="small" className="font-semibold mb-1">
+                        {course.benefits.funding}
+                      </Typography>
+                      {course.benefits.monthlyAllowance && (
+                        <Typography variant="small" color="secondary">
+                          {course.benefits.monthlyAllowance}
+                        </Typography>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                <div className="pt-4 border-t border-[var(--color-border-primary)]">
+                  <Button
+                    variant="primary"
+                    size="medium"
+                    fullWidth
+                    onClick={() => handleConsultationClick(course.id)}
+                  >
+                    상담 신청하기
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Curriculum Section */}
       <section id="curriculum" className="py-20 bg-gradient-to-br from-[var(--color-bg-secondary)] to-[var(--color-bg-tertiary)]">
         <div className="max-w-[1024px] mx-auto px-6">
@@ -541,6 +686,7 @@ export default function Home() {
               variant="primary"
               size="large"
               onClick={() => handleConsultationClick()}
+              className="w-auto mx-auto px-8 sm:px-12 md:px-16"
             >
               KH정보교육원 10초만에 지원하기
             </Button>
@@ -669,6 +815,7 @@ export default function Home() {
               variant="primary"
               size="large"
               onClick={() => handleConsultationClick()}
+              className="w-auto mx-auto px-8 sm:px-12 md:px-16"
             >
               KH정보교육원 10초만에 지원하기
             </Button>
@@ -861,134 +1008,18 @@ export default function Home() {
       </section>
 
       {/* Learning Support Section */}
-      <section className="py-20 bg-[var(--color-bg-secondary)]">
-        <div className="max-w-[1024px] mx-auto px-6">
-          <div className="text-center mb-12">
-            <Typography variant="h2" className="mb-4">
+      <section className="py-5 bg-[var(--color-bg-secondary)] flex items-center">
+        <div className="max-w-[1024px] mx-auto px-6 w-full">
+          <div className="text-center">
+            <Typography variant="h2" className="mb-3">
               {learningSupport.title}
             </Typography>
-            <Typography variant="h4" color="secondary" className="mb-6">
+            <Typography variant="h4" color="secondary" className="mb-4">
               {learningSupport.subtitle}
             </Typography>
             <Typography variant="body" color="secondary" className="text-lg">
               온오프라인을 넘나드는 든든한 학습지원 시스템
             </Typography>
-          </div>
-        </div>
-      </section>
-
-      {/* Courses Section */}
-      <section id="courses" className="py-20 bg-[var(--color-bg-primary)]">
-        <div className="max-w-[1024px] mx-auto px-6">
-          <div className="text-center mb-12">
-            <Typography variant="h2" className="mb-4">
-              강의 프로그램
-            </Typography>
-            <Typography variant="body" color="secondary" className="text-lg">
-              다양한 IT 분야의 전문가 양성 과정을 제공합니다
-            </Typography>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((course) => (
-              <Card
-                key={course.id}
-                padding="large"
-                variant="elevated"
-                className="flex flex-col h-full hover:border-[var(--color-brand-accent)] transition-colors"
-              >
-                <div className="flex-1">
-                  <div className="flex items-start justify-between mb-3">
-                    <Badge variant={getSupportTypeBadgeVariant(course.supportType)} size="small">
-                      {course.supportType}
-                    </Badge>
-                  </div>
-                  
-                  <Typography variant="h5" className="mb-2">
-                    {course.title}
-                  </Typography>
-                  
-                  <Typography variant="small" color="tertiary" className="mb-4">
-                    {course.category}
-                  </Typography>
-                  
-                  <Typography variant="body" color="secondary" className="mb-4 line-clamp-3">
-                    {course.description}
-                  </Typography>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {course.tags.slice(0, 3).map((tag, index) => (
-                      <Badge key={index} variant="default" size="small">
-                        {tag}
-                      </Badge>
-                    ))}
-                    {course.tags.length > 3 && (
-                      <Badge variant="default" size="small">
-                        +{course.tags.length - 3}
-                      </Badge>
-                    )}
-                  </div>
-
-                  {course.benefits && (
-                    <div className="mb-4 p-3 bg-[var(--color-bg-level1)] rounded-md">
-                      <Typography variant="small" className="font-semibold mb-1">
-                        {course.benefits.funding}
-                      </Typography>
-                      {course.benefits.monthlyAllowance && (
-                        <Typography variant="small" color="secondary">
-                          {course.benefits.monthlyAllowance}
-                        </Typography>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                <div className="pt-4 border-t border-[var(--color-border-primary)]">
-                  <Button
-                    variant="primary"
-                    size="medium"
-                    fullWidth
-                    onClick={() => handleConsultationClick(course.id)}
-                  >
-                    상담 신청하기
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Support Types Section */}
-      <section id="support" className="py-20 bg-[var(--color-bg-secondary)]">
-        <div className="max-w-[1024px] mx-auto px-6">
-          <div className="text-center mb-12">
-            <Typography variant="h2" className="mb-4">
-              국비지원 안내
-            </Typography>
-            <Typography variant="body" color="secondary" className="text-lg">
-              다양한 국비지원 프로그램을 통해 부담 없이 학습하세요
-            </Typography>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {coursesData.common_info.support_types.map((support, index) => (
-              <Card key={index} padding="large" variant="elevated">
-                <Typography variant="h5" className="mb-3">
-                  {support.type}
-                </Typography>
-                <Typography variant="body" color="secondary" className="mb-4">
-                  {support.description}
-                </Typography>
-                <div className="space-y-2">
-                  {support.courses.map((course, courseIndex) => (
-                    <Badge key={courseIndex} variant="info" size="small">
-                      {course}
-                    </Badge>
-                  ))}
-                </div>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
@@ -1029,6 +1060,40 @@ export default function Home() {
                     {location.address}
                   </Typography>
                 )}
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Support Types Section */}
+      <section id="support" className="py-20 bg-[var(--color-bg-secondary)]">
+        <div className="max-w-[1024px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <Typography variant="h2" className="mb-4">
+              국비지원 안내
+            </Typography>
+            <Typography variant="body" color="secondary" className="text-lg">
+              다양한 국비지원 프로그램을 통해 부담 없이 학습하세요
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {coursesData.common_info.support_types.map((support, index) => (
+              <Card key={index} padding="large" variant="elevated">
+                <Typography variant="h5" className="mb-3">
+                  {support.type}
+                </Typography>
+                <Typography variant="body" color="secondary" className="mb-4">
+                  {support.description}
+                </Typography>
+                <div className="space-y-2">
+                  {support.courses.map((course, courseIndex) => (
+                    <Badge key={courseIndex} variant="info" size="small">
+                      {course}
+                    </Badge>
+                  ))}
+                </div>
               </Card>
             ))}
           </div>
