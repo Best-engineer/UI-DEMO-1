@@ -1,0 +1,220 @@
+{
+  "siteName": "경일게임IT아카데미 - DevOps 과정",
+  "framework": "Next.js (React)",
+  "cssFramework": "Tailwind CSS",
+  "colors": {
+    "brand": {
+      "primary": "rgb(36, 49, 143)",
+      "secondary": "rgb(78, 15, 224)",
+      "accent": "rgb(200, 80, 255)"
+    },
+    "status": {
+      "success": "rgb(0, 191, 64)",
+      "successLight": "rgb(73, 229, 125)",
+      "successBg": "rgb(217, 255, 230)",
+      "error": "rgb(255, 60, 60)",
+      "warning": "rgb(255, 204, 0)",
+      "info": "rgb(0, 102, 255)",
+      "infoBg": "rgb(246, 250, 254)"
+    },
+    "background": {
+      "primary": "rgb(255, 255, 255)",
+      "secondary": "rgb(250, 239, 255)",
+      "tertiary": "rgb(255, 251, 250)",
+      "dark": "rgb(23, 23, 25)",
+      "gray": "rgb(246, 250, 254)"
+    },
+    "text": {
+      "primary": "rgb(23, 23, 25)",
+      "secondary": "rgba(55, 56, 60, 0.61)",
+      "light": "rgb(255, 255, 255)",
+      "dark": "rgb(0, 0, 0)",
+      "muted": "rgb(152, 155, 162)"
+    },
+    "border": {
+      "default": "rgba(112, 115, 124, 0.22)",
+      "light": "rgba(112, 115, 124, 0.08)",
+      "medium": "rgba(112, 115, 124, 0.16)"
+    },
+    "navigation": {
+      "background": "rgb(33, 34, 37)",
+      "text": "rgb(255, 255, 255)"
+    },
+    "link": {
+      "color": "rgb(0, 0, 0)",
+      "textDecoration": "none",
+      "hoverColor": "rgb(36, 49, 143)"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "\"Pretendard Variable\", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
+      "fallback": "system-ui, -apple-system, sans-serif"
+    },
+    "base": {
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "400"
+    },
+    "headings": {
+      "h1": {
+        "fontSize": "36px",
+        "lineHeight": "48px",
+        "fontWeight": "700",
+        "color": "rgb(255, 255, 255)"
+      },
+      "h2": {
+        "fontSize": "40px",
+        "lineHeight": "52px",
+        "fontWeight": "700",
+        "color": "rgb(23, 23, 25)"
+      },
+      "h3": {
+        "fontSize": "28px",
+        "lineHeight": "38.08px",
+        "fontWeight": "700",
+        "color": "rgb(0, 0, 0)"
+      },
+      "h4": {
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "fontWeight": "500",
+        "color": "rgba(55, 56, 60, 0.61)"
+      },
+      "h5": {
+        "fontSize": "24px",
+        "lineHeight": "32px",
+        "fontWeight": "600",
+        "color": "rgba(46, 47, 51, 0.88)"
+      }
+    },
+    "fontWeights": {
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700"
+    }
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px",
+    "2xl": "40px",
+    "3xl": "48px",
+    "4xl": "60px",
+    "5xl": "80px",
+    "6xl": "120px"
+  },
+  "layout": {
+    "maxWidth": "1200px",
+    "containerPadding": "20px",
+    "sectionPadding": {
+      "top": "60px",
+      "bottom": "60px"
+    },
+    "navigation": {
+      "height": "60px",
+      "position": "sticky"
+    }
+  },
+  "components": {
+    "button": {
+      "primary": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(36, 49, 143)",
+        "padding": "12px 24px",
+        "borderRadius": "8px",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "border": "1px solid rgba(112, 115, 124, 0.22)"
+      },
+      "secondary": {
+        "backgroundColor": "transparent",
+        "color": "rgb(36, 49, 143)",
+        "padding": "12px 24px",
+        "borderRadius": "8px",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "border": "1px solid rgb(36, 49, 143)"
+      },
+      "cta": {
+        "backgroundColor": "rgb(36, 49, 143)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "16px 32px",
+        "borderRadius": "8px",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "border": "none"
+      }
+    },
+    "link": {
+      "color": "rgb(0, 0, 0)",
+      "textDecoration": "none",
+      "hoverColor": "rgb(36, 49, 143)"
+    },
+    "card": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "12px",
+      "padding": "24px",
+      "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.08)",
+      "border": "1px solid rgba(112, 115, 124, 0.12)"
+    },
+    "badge": {
+      "default": {
+        "backgroundColor": "rgb(246, 250, 254)",
+        "color": "rgb(36, 49, 143)",
+        "padding": "4px 8px",
+        "borderRadius": "4px",
+        "fontSize": "13px",
+        "fontWeight": "600"
+      },
+      "success": {
+        "backgroundColor": "rgb(217, 255, 230)",
+        "color": "rgb(0, 150, 50)",
+        "padding": "4px 8px",
+        "borderRadius": "4px",
+        "fontSize": "13px",
+        "fontWeight": "600"
+      }
+    }
+  },
+  "animations": {
+    "transition": {
+      "default": "0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "fast": "0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "slow": "0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "easing": {
+      "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "in": "cubic-bezier(0.4, 0, 1, 1)",
+      "out": "cubic-bezier(0, 0, 0.2, 1)",
+      "inOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+  "borderRadius": {
+    "none": "0",
+    "sm": "4px",
+    "md": "8px",
+    "lg": "12px",
+    "xl": "16px",
+    "2xl": "24px",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "default": "0 2px 8px rgba(0, 0, 0, 0.08)",
+    "md": "0 4px 12px rgba(0, 0, 0, 0.1)",
+    "lg": "0 10px 25px rgba(0, 0, 0, 0.15)",
+    "xl": "0 20px 40px rgba(0, 0, 0, 0.2)"
+  },
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  }
+}

@@ -1,0 +1,305 @@
+---
+alwaysApply: true
+---
+
+# UI Component Library Rules
+
+## 프로젝트 개요
+이 프로젝트는 Linear Dark Theme을 기반으로 한 중앙화된 컴포넌트 라이브러리를 사용합니다. 모든 UI 컴포넌트는 재사용 가능하도록 설계되었으며, 테마 시스템을 통해 일관된 디자인을 유지합니다.
+
+## 필수 규칙
+
+### 1. 컴포넌트 사용 원칙
+- **절대 규칙**: 프로젝트 전반에서 UI 컴포넌트를 만들 때는 반드시 `components/ui/` 디렉토리의 기존 컴포넌트를 사용해야 합니다.
+- 새로운 컴포넌트를 만들기 전에 먼저 기존 컴포넌트로 구현 가능한지 확인하세요.
+- 기존 컴포넌트로 해결되지 않는 경우에만 새 컴포넌트를 추가하되, `components/ui/` 디렉토리에 추가하고 `components/ui/index.ts`에 export를 추가해야 합니다.
+
+### 2. 컴포넌트 Import 규칙
+- 모든 컴포넌트는 `components/ui/index.ts`를 통해 중앙에서 import 해야 합니다.
+- 올바른 import 방법:
+  ```tsx
+  import { Button, Card, Input, Badge, Alert, Typography, Carousel, Navbar, Footer, Hero } from '@/components/ui';
+  // 또는
+  import { Button, Card } from '../../components/ui';
+  ```
+- 잘못된 방법 (직접 파일 import 금지):
+  ```tsx
+  // ❌ 금지
+  import Button from '@/components/ui/Button';
+  import { Button } from '@/components/ui/Button';
+  ```
+
+### 3. 스타일링 규칙
+- **CSS 변수 사용 필수**: 모든 색상, 간격, 폰트 크기 등은 반드시 CSS 변수를 사용해야 합니다.
+- CSS 변수는 `app/globals.css`에 정의되어 있으며, `var(--color-*)`, `var(--spacing-*)`, `var(--font-*)` 형식으로 사용합니다.
+- 인라인 스타일이나 하드코딩된 색상 값 사용 금지:
+  ```tsx
+  // ✅ 올바른 방법
+  className="bg-[var(--color-bg-secondary)] text-[var(--color-text-primary)]"
+  
+  // ❌ 금지
+  className="bg-gray-800 text-white"
+  style={{ backgroundColor: '#1c1c1f' }}
+  ```
+
+### 4. 테마 시스템
+- 테마 값은 `lib/theme.ts`와 `theme.json`에서 관리됩니다.
+- 테마 값에 접근할 때는 `lib/theme.ts`의 헬퍼 함수를 사용하거나 CSS 변수를 직접 사용하세요.
+- 테마 변경은 `theme.json`과 `app/globals.css`에서만 수행해야 합니다.
+
+## 사용 가능한 컴포넌트
+
+### 기본 컴포넌트
+
+#### 1. Button
+- **위치**: `components/ui/Button.tsx`
+- **Props**: `variant` (primary | secondary | ghost | danger), `size` (small | medium | large), `fullWidth`
+- **사용 예시**:
+  ```tsx
+  <Button variant="primary" size="medium">Click me</Button>
+  <Button variant="secondary" size="large" fullWidth>Submit</Button>
+  ```
+
+#### 2. Card
+- **위치**: `components/ui/Card.tsx`
+- **Props**: `padding` (none | small | medium | large), `variant` (default | elevated), `image`, `imagePosition` (top | bottom), `onClick`
+- **사용 예시**:
+  ```tsx
+  <Card padding="large" variant="elevated">
+    <Typography variant="h5">Card Title</Typography>
+  </Card>
+  
+  <Card
+    image={{ src: '/image.jpg', alt: 'Description', objectFit: 'cover' }}
+    imagePosition="top"
+  >
+    <Typography variant="body">Card content</Typography>
+  </Card>
+  ```
+
+#### 3. Input
+- **위치**: `components/ui/Input.tsx`
+- **Props**: `label`, `error`, `helperText`, `fullWidth`
+- **사용 예시**:
+  ```tsx
+  <Input
+    label="Email"
+    placeholder="Enter your email"
+    error="Invalid email"
+    fullWidth
+  />
+  ```
+
+#### 4. Badge
+- **위치**: `components/ui/Badge.tsx`
+- **Props**: `variant` (default | primary | success | warning | error | info), `size` (small | medium)
+- **사용 예시**:
+  ```tsx
+  <Badge variant="primary">New</Badge>
+  <Badge variant="success" size="small">Active</Badge>
+  ```
+
+#### 5. Alert
+- **위치**: `components/ui/Alert.tsx`
+- **Props**: `variant` (info | success | warning | error), `title`, `onClose`
+- **사용 예시**:
+  ```tsx
+  <Alert variant="success" title="Success">
+    Your changes have been saved.
+  </Alert>
+  ```
+
+#### 6. Typography
+- **위치**: `components/ui/Typography.tsx`
+- **Props**: `variant` (h1 | h2 | h3 | h4 | h5 | h6 | body | small | tiny), `color` (primary | secondary | tertiary | quaternary), `as`
+- **사용 예시**:
+  ```tsx
+  <Typography variant="h1">Main Title</Typography>
+  <Typography variant="body" color="secondary">Description text</Typography>
+  ```
+
+### 레이아웃 컴포넌트
+
+#### 7. Navbar
+- **위치**: `components/ui/Navbar.tsx`
+- **Props**: `logo`, `logoText`, `links`, `ctaButton`, `variant` (default | transparent), `sticky`
+- **사용 예시**:
+  ```tsx
+  <Navbar
+    logoText="MyApp"
+    links={[
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about' }
+    ]}
+    ctaButton={{ label: 'Sign In', href: '/login' }}
+  />
+  ```
+
+#### 8. Footer
+- **위치**: `components/ui/Footer.tsx`
+- **Props**: `logo`, `logoText`, `description`, `columns`, `bottomLinks`, `copyright`
+- **사용 예시**:
+  ```tsx
+  <Footer
+    logoText="MyApp"
+    description="Building the future"
+    columns={[
+      {
+        title: 'Product',
+        links: [
+          { label: 'Features', href: '/features' }
+        ]
+      }
+    ]}
+  />
+  ```
+
+#### 9. Hero
+- **위치**: `components/ui/Hero.tsx`
+- **Props**: `title`, `subtitle`, `description`, `primaryAction`, `secondaryAction`, `variant` (default | centered | split), `backgroundImage`
+- **사용 예시**:
+  ```tsx
+  <Hero
+    title="Welcome to Our Platform"
+    subtitle="Get Started"
+    description="Build amazing products"
+    primaryAction={{ label: 'Get Started', onClick: () => {} }}
+    variant="centered"
+  />
+  ```
+
+### 고급 컴포넌트
+
+#### 10. Carousel
+- **위치**: `components/ui/Carousel.tsx`
+- **Props**: `items`, `autoPlay`, `autoPlayInterval`, `showIndicators`, `showNavigation`, `infinite`
+- **사용 예시**:
+  ```tsx
+  <Carousel
+    items={[
+      { id: 1, content: <div>Slide 1</div> },
+      { id: 2, content: <div>Slide 2</div> }
+    ]}
+    autoPlay
+    autoPlayInterval={3000}
+    showIndicators
+    showNavigation
+  />
+  ```
+
+## 컴포넌트 개발 가이드라인
+
+### 새 컴포넌트 추가 시
+1. `components/ui/` 디렉토리에 새 컴포넌트 파일 생성
+2. TypeScript 인터페이스로 Props 타입 정의
+3. CSS 변수를 사용한 스타일링 (하드코딩된 값 금지)
+4. `components/ui/index.ts`에 export 추가
+5. `app/components/page.tsx`에 데모 예제 추가
+
+### 컴포넌트 스타일링 원칙
+- 모든 색상: `var(--color-*)` 사용
+- 간격: `var(--spacing-*)` 또는 Tailwind spacing 클래스
+- 폰트: `var(--font-*)` 사용
+- Border radius: `var(--radius-*)` 사용
+- Shadow: `var(--shadow-*)` 사용
+- Transition: `var(--animation-timing-*)` 및 `var(--animation-easing-*)` 사용
+
+### 컴포넌트 구조
+```tsx
+import React from 'react';
+
+export interface ComponentProps {
+  // Props 타입 정의
+}
+
+const Component: React.FC<ComponentProps> = ({
+  // Props destructuring
+}) => {
+  // CSS 변수를 사용한 스타일 정의
+  const baseStyles = '...';
+  const variantStyles = {
+    // variant별 스타일
+  };
+
+  return (
+    <div className={`${baseStyles} ${variantStyles[variant]}`}>
+      {/* 컴포넌트 내용 */}
+    </div>
+  );
+};
+
+export default Component;
+```
+
+## 금지 사항
+
+### ❌ 절대 하지 말아야 할 것들
+1. **컴포넌트 직접 import 금지**: `components/ui/Button.tsx`에서 직접 import 하지 말 것
+2. **하드코딩된 색상 값 금지**: `#1c1c1f`, `rgb(28, 28, 31)` 등 직접 색상 값 사용 금지
+3. **인라인 스타일 금지**: `style={{ color: '#fff' }}` 같은 인라인 스타일 사용 금지
+4. **기존 컴포넌트 무시**: 새로운 버튼이나 카드 컴포넌트를 만들지 말고 기존 컴포넌트 사용
+5. **테마 시스템 우회**: CSS 변수 대신 직접 값을 사용하지 말 것
+
+### ✅ 반드시 해야 할 것들
+1. **중앙 import 사용**: `components/ui/index.ts`에서 import
+2. **CSS 변수 사용**: 모든 스타일은 CSS 변수로 정의
+3. **기존 컴포넌트 활용**: 가능한 한 기존 컴포넌트 조합으로 구현
+4. **타입 안정성**: TypeScript 타입을 명확히 정의
+5. **일관성 유지**: 테마 시스템과 디자인 시스템 준수
+
+## 예시: 올바른 컴포넌트 사용
+
+```tsx
+'use client';
+
+import { Button, Card, Input, Typography, Badge } from '@/components/ui';
+
+export default function MyPage() {
+  return (
+    <div className="bg-[var(--color-bg-primary)] min-h-screen p-6">
+      <Card padding="large" variant="elevated">
+        <Typography variant="h3" className="mb-4">
+          Welcome
+        </Typography>
+        <Typography variant="body" color="secondary" className="mb-6">
+          Please fill out the form below.
+        </Typography>
+        
+        <div className="space-y-4 mb-6">
+          <Input
+            label="Name"
+            placeholder="Enter your name"
+            fullWidth
+          />
+          <Input
+            label="Email"
+            placeholder="Enter your email"
+            fullWidth
+          />
+        </div>
+        
+        <div className="flex gap-3 items-center">
+          <Button variant="primary">Submit</Button>
+          <Button variant="ghost">Cancel</Button>
+          <Badge variant="info">Draft</Badge>
+        </div>
+      </Card>
+    </div>
+  );
+}
+```
+
+## 테마 참조
+
+### 주요 CSS 변수
+- **배경색**: `--color-bg-primary`, `--color-bg-secondary`, `--color-bg-tertiary`
+- **텍스트**: `--color-text-primary`, `--color-text-secondary`, `--color-text-tertiary`
+- **브랜드**: `--color-brand-accent`, `--color-brand-accent-hover`
+- **보더**: `--color-border-primary`, `--color-border-secondary`
+- **시맨틱**: `--color-semantic-red`, `--color-semantic-green`, `--color-semantic-blue` 등
+
+전체 테마 값은 `theme.json`과 `app/globals.css`를 참조하세요.
+
+## 데모 확인
+모든 컴포넌트의 데모와 사용 예시는 `/components` 페이지에서 확인할 수 있습니다.
+

@@ -1,26 +1,163 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --color-brand-primary: rgb(36, 49, 143);
+  --color-brand-secondary: rgb(78, 15, 224);
+  --color-brand-accent: rgb(200, 80, 255);
+  --color-brand-text: rgb(255, 255, 255);
+
+  /* Status Colors */
+  --color-status-success: rgb(0, 191, 64);
+  --color-status-success-light: rgb(73, 229, 125);
+  --color-status-success-bg: rgb(217, 255, 230);
+  --color-status-error: rgb(255, 60, 60);
+  --color-status-warning: rgb(255, 204, 0);
+  --color-status-info: rgb(0, 102, 255);
+  --color-status-info-bg: rgb(246, 250, 254);
+
+  /* Background Colors */
+  --color-bg-primary: rgb(255, 255, 255);
+  --color-bg-secondary: rgb(250, 239, 255);
+  --color-bg-tertiary: rgb(255, 251, 250);
+  --color-bg-dark: rgb(23, 23, 25);
+  --color-bg-gray: rgb(246, 250, 254);
+
+  /* Text Colors */
+  --color-text-primary: rgb(23, 23, 25);
+  --color-text-secondary: rgba(55, 56, 60, 0.61);
+  --color-text-light: rgb(255, 255, 255);
+  --color-text-dark: rgb(0, 0, 0);
+  --color-text-muted: rgb(152, 155, 162);
+
+  /* Border Colors */
+  --color-border-default: rgba(112, 115, 124, 0.22);
+  --color-border-light: rgba(112, 115, 124, 0.08);
+  --color-border-medium: rgba(112, 115, 124, 0.16);
+
+  /* Navigation Colors */
+  --color-nav-background: rgb(33, 34, 37);
+  --color-nav-text: rgb(255, 255, 255);
+
+  /* Link Colors */
+  --color-link-color: rgb(0, 0, 0);
+  --color-link-hover: rgb(36, 49, 143);
+
+  /* Typography */
+  --font-family-primary: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-family-fallback: system-ui, -apple-system, sans-serif;
+
+  --font-size-base: 16px;
+  --line-height-base: 24px;
+  --font-weight-base: 400;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Headings */
+  --font-h1-size: 36px;
+  --font-h1-line-height: 48px;
+  --font-h1-weight: 700;
+  --font-h1-color: rgb(255, 255, 255);
+
+  --font-h2-size: 40px;
+  --font-h2-line-height: 52px;
+  --font-h2-weight: 700;
+  --font-h2-color: rgb(23, 23, 25);
+
+  --font-h3-size: 28px;
+  --font-h3-line-height: 38.08px;
+  --font-h3-weight: 700;
+  --font-h3-color: rgb(0, 0, 0);
+
+  --font-h4-size: 14px;
+  --font-h4-line-height: 20px;
+  --font-h4-weight: 500;
+  --font-h4-color: rgba(55, 56, 60, 0.61);
+
+  --font-h5-size: 24px;
+  --font-h5-line-height: 32px;
+  --font-h5-weight: 600;
+  --font-h5-color: rgba(46, 47, 51, 0.88);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 60px;
+  --spacing-5xl: 80px;
+  --spacing-6xl: 120px;
+
+  /* Layout */
+  --layout-max-width: 1200px;
+  --layout-container-padding: 20px;
+  --layout-section-padding-top: 60px;
+  --layout-section-padding-bottom: 60px;
+  --layout-nav-height: 60px;
+
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-default: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+  /* Animations */
+  --animation-transition-default: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-easing-in: cubic-bezier(0.4, 0, 1, 1);
+  --animation-easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --animation-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* Z-Index */
+  --z-index-base: 1;
+  --z-index-footer: 50;
+  --z-index-header: 100;
+  --z-index-overlay: 500;
+  --z-index-popover: 600;
+  --z-index-dialog: 700;
+  --z-index-toast: 800;
+  --z-index-tooltip: 1100;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--color-bg-primary);
+  --color-foreground: var(--color-text-primary);
+  --font-sans: var(--font-family-primary);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  font-weight: var(--font-weight-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

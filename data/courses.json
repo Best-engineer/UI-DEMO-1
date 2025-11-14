@@ -1,0 +1,372 @@
+{
+  "metadata": {
+    "crawled_date": "2025-11-13",
+    "source": "https://khacademy.co.kr",
+    "description": "KH정보교육원 IT 커리큘럼 데이터"
+  },
+  "courses": [
+    {
+      "id": "it_developer",
+      "url": "https://khacademy.co.kr/curriculum/it_developer.kh",
+      "category": "IT SW개발·JAVA개발·정보보안",
+      "title": "JAVA SW 개발자 양성",
+      "fullTitle": "(디지털컨버전스) React & Spring 활용 자바(Java) 개발자",
+      "description": "개발자로의 취업을 준비하는 분들이 알아야 하는 필수 지식과 기술을 이론수업과 프로젝트 실습을 통해 습득하는 소프트웨어 자바개발자 양성 과정 입니다.",
+      "tags": ["#JAVA", "#ORACLE", "#REACT", "#SPRING", "#HTML/CSS"],
+      "supportType": "국비지원",
+      "benefits": {
+        "funding": "전액 국비지원",
+        "monthlyAllowance": "매 월 최대 700,000원",
+        "description": "고용노동부와 함께하는 국비지원 교육과정"
+      },
+      "curriculum": [
+        {
+          "category": "PROGRAMMING LANGUAGE",
+          "title": "소프트웨어 개발언어 기본 문법",
+          "ncs": ["프로그래밍 언어 활용", "프로그래밍 언어 응용", "네트워크 프로그래밍 구현"],
+          "technologies": ["JAVA"]
+        },
+        {
+          "category": "BACK-END 1 DATABASE",
+          "title": "SQL 활용 및 DB 설계",
+          "ncs": ["데이터베이스 구현", "SQL 활용", "SQL 응용"],
+          "technologies": ["ORACLE"]
+        },
+        {
+          "category": "FRONT-END",
+          "title": "UI디자인+구현",
+          "ncs": ["UI 디자인", "UI 구현"],
+          "technologies": ["HTML5 / CSS", "JAVASCRIPT / JQUERY"]
+        },
+        {
+          "category": "BACK-END 2",
+          "title": "애플리케이션 설계+구현",
+          "ncs": ["서버프로그램 구현", "애플리케이션 설계", "인터페이스 구현"],
+          "technologies": ["SERVLET / JSP", "EL / JSTL, AJAX", "MYBATIS"]
+        },
+        {
+          "category": "FULL STACK",
+          "title": "UI 심화 설계/적용",
+          "ncs": ["요구사항 확인", "화면 구현", "통합 구현"],
+          "technologies": [
+            "UML & 데이터베이스 모델링",
+            "REACT",
+            "SPRING FRAMEWORK (기본+응용)",
+            "Spring Mybatis (연계)"
+          ]
+        },
+        {
+          "category": "FULL STACK",
+          "title": "애플리케이션 테스트 및 배포",
+          "ncs": ["애플리케이션 테스트 수행", "애플리케이션 배포"],
+          "technologies": []
+        },
+        {
+          "category": "PROJECT",
+          "title": "조별실습과제",
+          "ncs": [
+            "[비NCS] 공공테이터 활용",
+            "[비NCS] 공공테이터 아키텍처 설계",
+            "애플리케이션 배포",
+            "애플리케이션 테스트 관리"
+          ],
+          "technologies": [
+            "공공데이터의 이해",
+            "공공데이터 분석 및 허가 받기",
+            "JSON, XML 기반 데이터 수집 실습",
+            "공공데이터 기반 DB 분석, 구축, 실습",
+            "공공데이터 API 설계",
+            "데이터 배포를 위한 REST 설계",
+            "애플리케이션 종합 구축"
+          ]
+        },
+        {
+          "category": "ORIENTATION",
+          "title": "OT/취업컨설팅/수료식",
+          "ncs": [],
+          "technologies": []
+        }
+      ],
+      "features": [
+        {
+          "point": "Point 01",
+          "description": "취업 담임 선생님들이 입학부터 취업까지 1:1맞춤 눈높이 서포트를 합니다."
+        },
+        {
+          "point": "Point 02",
+          "description": "업계 관계자의 A to Z, 최신 트렌드까지 갖춘 20년 실무 100% 비법을 알려드립니다."
+        },
+        {
+          "point": "Point 03",
+          "description": "업계 출신 강사님들과 졸업 선배들의 실제 면접 과정들을 하나하나 알려드립니다."
+        },
+        {
+          "point": "Point 04",
+          "description": "20년간 구축된 KH만의 막강한 업체 네트워크를 취업 담임과 밀착하여 지원해 드립니다."
+        },
+        {
+          "point": "Point 05",
+          "description": "입학하는 순간부터 졸업까지, 체계적인 취업 시스템으로 책임집니다."
+        }
+      ]
+    },
+    {
+      "id": "it_security",
+      "url": "https://khacademy.co.kr/curriculum/it_security.kh",
+      "category": "IT SW개발·JAVA개발·정보보안",
+      "title": "정보보안 전문가 양성",
+      "fullTitle": "(정보시스템구축) 정보시스템 구축·운영 기반 정보보안 전문가",
+      "description": "현업에서 필요로 하는 정보보안 관련 기초 지식, 실제 보안위협 사례, 대응 실력을 이론수업과 프로젝트 실습을 통해 습득하는 정보보안 전문가 양성 과정 입니다.",
+      "tags": ["#VMware", "#Linux", "#VPN", "#보안인프라", "#모의해킹"],
+      "supportType": "국비지원",
+      "benefits": {
+        "funding": "전액 국비지원",
+        "monthlyAllowance": "매 월 최대 700,000원",
+        "description": "고용노동부와 함께하는 국비지원 교육과정"
+      },
+      "curriculum": [
+        {
+          "category": "보안 구축 Ⅰ",
+          "title": "NW·시스템 보안 구축",
+          "ncs": ["NW 보안 구축", "시스템 보안 구축"],
+          "technologies": [
+            "Network Basic",
+            "Packet tracer",
+            "NAT",
+            "ACL",
+            "VLAN",
+            "Telnet/SSH",
+            "DNS",
+            "DHCP",
+            "FTP"
+          ]
+        },
+        {
+          "category": "보안 구축 Ⅱ",
+          "title": "SW개발·DB 보안 구축",
+          "ncs": ["SW개발 보안 구축", "DB보안 구축"],
+          "technologies": ["WEB", "WAS", "Encoding", "Firewall", "MySQL"]
+        },
+        {
+          "category": "정보보호 진단 및 분석",
+          "title": "시스템 진단·모의해킹",
+          "ncs": ["정보시스템 진단", "모의해킹"],
+          "technologies": ["Linux Basic", "GNS3", "VMware", "Penetration Test"]
+        },
+        {
+          "category": "정보보호 관리/운영 Ⅰ",
+          "title": "네트워크·시스템 보안 운영",
+          "ncs": ["네트워크 보안 운영", "시스템 보안 운영"],
+          "technologies": [
+            "Sniffing",
+            "Spoofing",
+            "DOS/DDOS",
+            "IDS",
+            "Malware",
+            "PAM",
+            "SELinux"
+          ]
+        },
+        {
+          "category": "정보보호 관리/운영 Ⅱ",
+          "title": "애플리케이션 보안·보안장비 운용",
+          "ncs": ["애플리케이션 보안 운영", "보안 장비 운용"],
+          "technologies": ["Web Hacking", "WAF", "UTM", "VPN", "LVS", "이중화"]
+        },
+        {
+          "category": "보안사고 분석대응",
+          "title": "보안로그·침해사고 분석",
+          "ncs": ["보안로그 분석", "침해사고 분석", "보안관제 기획운영"],
+          "technologies": ["Rsyslog", "취약점 진단", "취약점 진단 도구", "ESM"]
+        },
+        {
+          "category": "세미 프로젝트",
+          "title": "가상화 기술을 사용한 기업망 구성 및 운영",
+          "ncs": ["가상화 기술을 사용한 기업망 구성 및 운영"],
+          "technologies": []
+        },
+        {
+          "category": "파이널 프로젝트",
+          "title": "모의해킹 및 취약점 진단을 통한 보안 컨설팅",
+          "ncs": ["가상화 기술을 사용한 모의해킹 및 취약점 진단을 통한 보안 컨설팅"],
+          "technologies": []
+        },
+        {
+          "category": "ORIENTATION",
+          "title": "OT/취업컨설팅/수료식",
+          "ncs": [],
+          "technologies": []
+        }
+      ],
+      "features": [
+        {
+          "point": "Point 01",
+          "description": "취업 담임 선생님들이 입학부터 취업까지 1:1맞춤 눈높이 서포트를 합니다."
+        },
+        {
+          "point": "Point 02",
+          "description": "업계 관계자의 A to Z, 최신 트렌드까지 갖춘 20년 실무 100% 비법을 알려드립니다."
+        },
+        {
+          "point": "Point 03",
+          "description": "업계 출신 강사님들과 졸업 선배들의 실제 면접 과정들을 하나하나 알려드립니다."
+        },
+        {
+          "point": "Point 04",
+          "description": "20년간 구축된 KH만의 막강한 업체 네트워크를 취업 담임과 밀착하여 지원해 드립니다."
+        },
+        {
+          "point": "Point 05",
+          "description": "입학하는 순간부터 졸업까지, 체계적인 취업 시스템으로 책임집니다."
+        }
+      ]
+    },
+    {
+      "id": "it_kdt_3",
+      "url": "https://khacademy.co.kr/curriculum/it_kdt_3.kh",
+      "category": "IT SW개발·JAVA개발·정보보안",
+      "title": "AWS 클라우드 기반 과정(KDT)",
+      "fullTitle": "AWS 클라우드 기반 백엔드 개발자 양성(KDT)",
+      "description": "AWS 클라우드 환경에서의 백엔드 개발 역량을 갖춘 실무형 개발자를 양성하는 K-Digital Training 과정입니다.",
+      "tags": ["#AWS", "#Cloud", "#Backend", "#DevOps", "#Microservices"],
+      "supportType": "KDT 국비지원",
+      "benefits": {
+        "funding": "전액 국비지원",
+        "monthlyAllowance": "매 월 최대 700,000원",
+        "description": "K-Digital Training 고용노동부 디지털 신기술 심화과정"
+      },
+      "curriculum": []
+    },
+    {
+      "id": "it_kdt_2",
+      "url": "https://khacademy.co.kr/curriculum/it_kdt_2.kh",
+      "category": "IT SW개발·JAVA개발·정보보안",
+      "title": "프로젝트 기반 AWS 풀스택 웹 개발자 양성 (KDT)",
+      "fullTitle": "프로젝트 기반 AWS 풀스택 웹 개발자 양성(KDT)",
+      "description": "프론트엔드부터 백엔드, 클라우드 인프라까지 전 영역을 학습하는 풀스택 개발자 양성 과정입니다.",
+      "tags": ["#AWS", "#FullStack", "#React", "#Node.js", "#Cloud"],
+      "supportType": "KDT 국비지원",
+      "benefits": {
+        "funding": "전액 국비지원",
+        "monthlyAllowance": "매 월 최대 700,000원",
+        "description": "K-Digital Training 고용노동부 디지털 신기술 심화과정"
+      },
+      "curriculum": []
+    },
+    {
+      "id": "it_kdt",
+      "url": "https://khacademy.co.kr/curriculum/it_kdt.kh",
+      "category": "IT SW개발·JAVA개발·정보보안",
+      "title": "Python & Elasticsearch 기반 금융솔루션 개발자(KDT)",
+      "fullTitle": "Python & Elasticsearch 기반 금융솔루션 개발자(KDT)",
+      "description": "Python과 Elasticsearch를 활용한 금융권 솔루션 개발 전문가를 양성하는 과정입니다.",
+      "tags": ["#Python", "#Elasticsearch", "#FinTech", "#DataAnalysis", "#Backend"],
+      "supportType": "KDT 국비지원",
+      "benefits": {
+        "funding": "전액 국비지원",
+        "monthlyAllowance": "매 월 최대 700,000원",
+        "description": "K-Digital Training 고용노동부 디지털 신기술 심화과정"
+      },
+      "curriculum": []
+    },
+    {
+      "id": "it_kdc",
+      "url": "https://khacademy.co.kr/curriculum/it_kdc.kh",
+      "category": "IT SW개발·JAVA개발·정보보안",
+      "title": "C언어 핵심요점 정리에서 데이터 시각화까지(KDC)",
+      "fullTitle": "C언어 핵심요점 정리에서 데이터 시각화까지(KDC)",
+      "description": "C언어 기초부터 데이터 시각화까지 학습하는 K-Digital Credit 단기 집중 과정입니다.",
+      "tags": ["#C언어", "#DataVisualization", "#Programming", "#Basics"],
+      "supportType": "KDC 국비지원",
+      "benefits": {
+        "funding": "국비지원 90% + 자부담 10%",
+        "description": "K-Digital Credit 디지털 기초역량 강화 과정"
+      },
+      "curriculum": []
+    },
+    {
+      "id": "it_kdc_5",
+      "url": "https://khacademy.co.kr/curriculum/it_kdc_5.kh",
+      "category": "IT SW개발·JAVA개발·정보보안",
+      "title": "DBA의 첫걸음 SQL 마스터하기(KDC)",
+      "fullTitle": "DBA의 첫걸음 SQL 마스터하기(KDC)",
+      "description": "데이터베이스 관리자가 되기 위한 SQL 기초 및 실무 역량을 학습하는 과정입니다.",
+      "tags": ["#SQL", "#Database", "#DBA", "#RDBMS", "#DataManagement"],
+      "supportType": "KDC 국비지원",
+      "benefits": {
+        "funding": "국비지원 90% + 자부담 10%",
+        "description": "K-Digital Credit 디지털 기초역량 강화 과정"
+      },
+      "curriculum": []
+    }
+  ],
+  "common_info": {
+    "locations": [
+      {
+        "name": "강남",
+        "branches": [
+          {
+            "name": "강남점 1관",
+            "address": "서울특별시 강남구 테헤란로14길 6 남도빌딩 2F,3F,4F,5F,6F"
+          },
+          {
+            "name": "강남점 2관",
+            "address": "서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F,5F,7F"
+          },
+          {
+            "name": "강남점 3관",
+            "address": "서울특별시 강남구 테헤란로 130 호산빌딩 5F,6F"
+          }
+        ]
+      },
+      {
+        "name": "종로",
+        "address": "서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F,3F"
+      },
+      {
+        "name": "당산",
+        "address": "서울특별시 영등포구 선유동2로 57 이레빌딩(구관) 19F,20F"
+      },
+      {
+        "name": "논현",
+        "address": "서울특별시 강남구 논현로 132길 9 마루빌딩 1F,2F,3F"
+      },
+      {
+        "name": "부산",
+        "address": "부산 부산진구 중앙대로 627 삼비빌딩 2F,12F"
+      }
+    ],
+    "company_info": {
+      "name": "KH정보교육원",
+      "ceo": "양진선",
+      "business_number": "487-86-00763",
+      "registration_number": "서울 강남 제2014-01호",
+      "established": "1998",
+      "copyright": "Copyright © 1998-2024 KH Information Educational Institute All Right Reserved"
+    },
+    "social_media": {
+      "facebook": "https://www.facebook.com/khacademy1998",
+      "blog": "https://blog.naver.com/ieiorkr2023",
+      "instagram": "https://www.instagram.com/kh_iei",
+      "kakao": "https://pf.kakao.com/_yxnxnTxd"
+    },
+    "support_types": [
+      {
+        "type": "국가기간전략산업직종",
+        "description": "전액 국비지원 + 훈련수당 매 월 최대 700,000원",
+        "courses": ["자바개발자 과정", "정보보안전문가 과정"]
+      },
+      {
+        "type": "K-디지털 트레이닝(KDT)",
+        "description": "디지털 신기술 심화과정 - 전액 국비지원",
+        "courses": ["AWS 클라우드", "풀스택 웹 개발자", "Python Elasticsearch"]
+      },
+      {
+        "type": "K-디지털 기초역량(KDC)",
+        "description": "국비지원 90% + 자부담 10%",
+        "courses": ["C언어 데이터 시각화", "SQL 마스터"]
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,519 @@
+{
+  "siteName": "KH정보교육원",
+  "pageType": "부트캠프 소개 페이지",
+  "meta": {
+    "title": "풀스택:DevOps 2기 소개 | KH정보교육원",
+    "url": "https://kiweb.or.kr/devops-2/",
+    "description": "풀스택:DevOps 2기 과정소개 페이지입니다."
+  },
+  "heroBanner": {
+    "badge": "💡사전모집중💡",
+    "tagline": "AI+클라우드로 앞서는 취업 경쟁력!",
+    "countdown": {
+      "display": true,
+      "endDate": "2025-02-15T00:00:00",
+      "format": "DD:HH:MM:SS"
+    }
+  },
+  "heroSection": {
+    "eyebrow": "빅테크 기업이 1순위로 선호하는",
+    "mainHeading": "AI를 활용한 웹서비스 개발자",
+    "subheading": [
+      "돌고 돌아 결국 여기로 옵니다.",
+      "처음부터 제대로 한번에 끝내세요."
+    ],
+    "cta": {
+      "text": "수강료 전액 지원받기",
+      "action": "신청 페이지로 이동"
+    }
+  },
+  "stickyNavigation": {
+    "items": [
+      { "label": "과정소개", "href": "#features" },
+      { "label": "커리큘럼", "href": "#curriculum" },
+      { "label": "취업지원", "href": "#job-support" },
+      { "label": "모집개요", "href": "#enrollment" }
+    ]
+  },
+  "features": {
+    "sections": [
+      {
+        "heading": "오프라인 집중력! 혹시 거리가 멀어서 고민중이신가요?",
+        "content": "생활관 지원 안내",
+        "description": "지방 거주자도 안심하고 수강할 수 있도록 생활관을 지원합니다. 쾌적한 환경에서 집중적으로 학습하세요."
+      },
+      {
+        "heading": "자격증? 취업? ALL - IN - ONE 케어",
+        "content": "취업 준비 + 자격증 취득 동시 지원",
+        "cards": [
+          {
+            "title": "취업준비",
+            "description": "1:1 이력서 첨삭, 면접 코칭, 포트폴리오 제작 지원"
+          },
+          {
+            "title": "자격증 취득",
+            "description": "SQLD, 정보처리기사 등 IT 자격증 취득 지원"
+          }
+        ]
+      },
+      {
+        "heading": "6개월 내 취업률 88% 훈련생 만족도 UP",
+        "content": "취업률 비교 그래프",
+        "statistics": {
+          "employmentRate": "88%",
+          "averageTime": "6개월",
+          "satisfaction": "4.8/5.0"
+        }
+      },
+      {
+        "heading": "단 한번에 취업 역량을 만드세요.",
+        "content": "JavaScript 기술 스택 소개",
+        "technologies": [
+          "Node.js",
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Nest.js",
+          "Docker",
+          "AWS",
+          "CI/CD"
+        ]
+      },
+      {
+        "heading": "모든 준비는 끝났습니다.",
+        "subtitle": "수강 혜택",
+        "cards": [
+          {
+            "title": "수강료 전액 지원",
+            "description": "국비지원으로 전액 무료"
+          },
+          {
+            "title": "ThinkBook 노트북 대여 제공",
+            "description": "교육용 노트북 무료 대여"
+          },
+          {
+            "title": "SQLD 자격증 취득 지원",
+            "description": "자격증 취득 비용 지원"
+          },
+          {
+            "title": "AI Cursor 결제 지원",
+            "description": "AI 개발 도구 구독료 지원"
+          },
+          {
+            "title": "베테랑 강사진 & 전문 취업 컨설팅",
+            "description": "실무 경력 10년+ 강사진"
+          },
+          {
+            "title": "기업 협약 프로젝트",
+            "description": "실제 기업과 협업 프로젝트"
+          }
+        ]
+      },
+      {
+        "heading": "단순한 교육이 아닙니다",
+        "subtitle": "경일의 차별점",
+        "items": [
+          {
+            "title": "AI 시대에 맞춘 바이브코딩 기반 교육",
+            "description": "AI와 대화하며 개발하는 새로운 패러다임"
+          },
+          {
+            "title": "Node.js 통한 실전 트랙",
+            "description": "실무에서 바로 쓸 수 있는 기술"
+          },
+          {
+            "title": "MOU 기업 협업 프로젝트",
+            "description": "실제 기업 과제 기반 프로젝트"
+          },
+          {
+            "title": "100% 국비지원 + 훈련장려금",
+            "description": "매 월 최대 81만 6천원 지원"
+          }
+        ]
+      }
+    ]
+  },
+  "whyNodejs": {
+    "sections": [
+      {
+        "heading": "바이브코딩이란?",
+        "content": "AI와 대화하며 개발하는 새로운 패러다임",
+        "description": "AI 도구를 활용하여 더 빠르고 효율적으로 개발하는 방법을 배웁니다. ChatGPT, GitHub Copilot, Cursor 등 최신 AI 도구를 실무 수준으로 활용할 수 있습니다."
+      },
+      {
+        "heading": "왜 Node.js를 배워야 할까요?",
+        "cards": [
+          {
+            "number": 1,
+            "title": "하나만 배워도 충분해요",
+            "description": "프론트엔드와 백엔드를 모두 JavaScript로 개발할 수 있습니다."
+          },
+          {
+            "number": 2,
+            "title": "처음 배우는 사람도 따라올 수 있어요",
+            "description": "다른 언어보다 배우기 쉽고 직관적인 문법 구조를 가지고 있습니다."
+          },
+          {
+            "number": 3,
+            "title": "바이브코딩(AI)과 찰떡궁합",
+            "description": "AI 도구들이 JavaScript를 가장 잘 이해하고 지원합니다."
+          },
+          {
+            "number": 4,
+            "title": "이미 채용시장에서 검증되었어요",
+            "description": "실리콘밸리부터 국내 스타트업까지 널리 사용되는 기술입니다."
+          }
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "heading": "20년의 취업 노하우, 결과로 증명합니다.",
+    "stats": [
+      {
+        "label": "평균 수료율",
+        "value": "90%"
+      },
+      {
+        "label": "누적 수강생",
+        "value": "1,000명+"
+      },
+      {
+        "label": "비전공자",
+        "value": "70%"
+      }
+    ]
+  },
+  "video": {
+    "heading": "개발자 부트캠프, 잘 고르는 3가지 꿀팁",
+    "youtubeId": "dQw4w9WgXcQ",
+    "description": "부트캠프 선택 시 고려해야 할 3가지 핵심 포인트를 알려드립니다."
+  },
+  "portfolio": {
+    "heading": "빅테크가 가장 선호하는 개발자 1순위",
+    "projects": [
+      {
+        "title": "NFT 음원 스트리밍 서비스",
+        "description": "블록체인 기반 음원 거래 플랫폼",
+        "technologies": ["React", "Node.js", "Solidity", "IPFS"]
+      },
+      {
+        "title": "중고거래 플랫폼",
+        "description": "실시간 채팅과 결제 시스템이 있는 중고거래 앱",
+        "technologies": ["Next.js", "Nest.js", "PostgreSQL", "Socket.io"]
+      },
+      {
+        "title": "크롬 월렛 확장프로그램",
+        "description": "암호화폐 지갑 크롬 확장 프로그램",
+        "technologies": ["TypeScript", "React", "Web3.js"]
+      },
+      {
+        "title": "랜덤 건배사 앱",
+        "description": "재미있는 건배사를 랜덤으로 제공하는 모바일 앱",
+        "technologies": ["React Native", "Node.js", "MongoDB"]
+      },
+      {
+        "title": "학습 웹사이트",
+        "description": "온라인 강의 플랫폼",
+        "technologies": ["Next.js", "Prisma", "Stripe", "AWS"]
+      }
+    ]
+  },
+  "curriculum": {
+    "heading": "단계마다 실습하고, 성과로 증명하는 커리큘럼",
+    "tabs": [
+      {
+        "name": "Part 1",
+        "title": "웹 기초 다지기",
+        "duration": "1개월",
+        "topics": [
+          "브라우저 동작 HTTP 기초",
+          "HTML/CSS",
+          "시맨틱 마크업과 반응형 레이아웃"
+        ],
+        "projects": "개인 포트폴리오 웹사이트"
+      },
+      {
+        "name": "Part 2",
+        "title": "프론트엔드 핵심: JS/TS",
+        "duration": "1개월",
+        "topics": [
+          "JavaScript 기초 및 ES6+",
+          "TypeScript",
+          "DOM 조작",
+          "비동기 프로그래밍"
+        ],
+        "projects": "동적 웹 애플리케이션"
+      },
+      {
+        "name": "Part 3",
+        "title": "백엔드 기반 다지기: Node/Nest.js + DB",
+        "duration": "1개월",
+        "topics": [
+          "Node.js 기초",
+          "Nest.js 프레임워크",
+          "데이터베이스 설계",
+          "RESTful API 개발"
+        ],
+        "projects": "Nest.js 포트폴리오 프로젝트"
+      },
+      {
+        "name": "Part 4",
+        "title": "DevOps 실전: Linux, Docker, AWS, CI/CD",
+        "duration": "1개월",
+        "topics": [
+          "Linux 시스템 관리",
+          "Docker 컨테이너",
+          "AWS 클라우드 서비스",
+          "CI/CD 파이프라인 구축"
+        ],
+        "projects": "인프라 자동화 프로젝트"
+      },
+      {
+        "name": "Part 5",
+        "title": "React & Next.js 기반 FrontEnd 프로그래밍",
+        "duration": "1개월",
+        "topics": [
+          "React 기초 및 고급",
+          "Next.js 프레임워크",
+          "상태 관리",
+          "서버 사이드 렌더링"
+        ],
+        "projects": "React & Next 프로젝트"
+      },
+      {
+        "name": "Part 6",
+        "title": "취업을 향하여 기업협약 포트폴리오 및 취업 준비",
+        "duration": "2개월",
+        "topics": [
+          "기업 협약 프로젝트",
+          "포트폴리오 제작",
+          "이력서 작성",
+          "면접 준비"
+        ],
+        "projects": "기업 협약 프로젝트"
+      }
+    ],
+    "projects": [
+      {
+        "type": "개인 프로젝트",
+        "name": "Nest.js 포트폴리오 프로젝트",
+        "description": "JWT 인증까지 완성하는 백엔드 경험"
+      },
+      {
+        "type": "팀 프로젝트",
+        "name": "React & Next 프로젝트",
+        "description": "플레이어 경험(UX)을 담은 첫 프론트엔드 도전"
+      },
+      {
+        "type": "팀 프로젝트",
+        "name": "기업 협약 프로젝트",
+        "description": "실제 기업 과제 기반 미션 수행",
+        "highlight": true
+      }
+    ]
+  },
+  "reviews": {
+    "heading": "아무것도 모를 때, 처음부터 전체를 배우는게 이득입니다",
+    "subtitle": "수강후기",
+    "items": [
+      {
+        "name": "김수강",
+        "course": "풀스택:DevOps 1기",
+        "content": "비전공자였지만 체계적인 커리큘럼으로 6개월 만에 취업에 성공했습니다. 특히 기업 협약 프로젝트가 정말 도움이 되었어요!",
+        "company": "네이버",
+        "position": "백엔드 개발자",
+        "rating": 5
+      },
+      {
+        "name": "이개발",
+        "course": "풀스택:DevOps 1기",
+        "content": "강사님들이 실무 경험이 풍부하셔서 실무에서 바로 쓸 수 있는 팁들을 많이 배울 수 있었습니다.",
+        "company": "카카오",
+        "position": "풀스택 개발자",
+        "rating": 5
+      },
+      {
+        "name": "박취업",
+        "course": "풀스택:DevOps 1기",
+        "content": "포트폴리오 제작부터 면접 준비까지 전 과정을 지원해주셔서 취업이 수월했습니다.",
+        "company": "당근마켓",
+        "position": "프론트엔드 개발자",
+        "rating": 5
+      }
+    ]
+  },
+  "interviews": {
+    "heading": "SI 양산형 개발사 말고, 성장하는 개발회사로 가야합니다",
+    "subtitle": "취업자 인터뷰",
+    "items": [
+      {
+        "name": "최성공",
+        "company": "빗썸 로똔다",
+        "tag": "기업 프로젝트 만족",
+        "content": "기업 협약 프로젝트를 통해 실제 업무 환경을 경험할 수 있어서 면접에서 큰 도움이 되었습니다.",
+        "position": "블록체인 개발자"
+      },
+      {
+        "name": "정취업",
+        "company": "블록체인기술연구소",
+        "tag": "기업 프로젝트 만족",
+        "content": "실무 프로젝트 경험이 있어서 신입이지만 바로 업무에 투입될 수 있었습니다.",
+        "position": "백엔드 개발자"
+      },
+      {
+        "name": "강만족",
+        "company": "바이올렛페이",
+        "tag": "커리큘럼 만족",
+        "content": "Node.js부터 DevOps까지 전 과정을 배워서 다양한 기업에 지원할 수 있었습니다.",
+        "position": "풀스택 개발자"
+      }
+    ]
+  },
+  "jobSupport": {
+    "heading": "취업 될 때까지 끝까지 함께하는 무제한 취업 서포트",
+    "categories": [
+      {
+        "title": "실무 100% 기반 코칭",
+        "items": [
+          "현직자 초청 모의 면접",
+          "전문가의 실무 특강",
+          "정기 취업 특강"
+        ]
+      },
+      {
+        "title": "전문 취업팀 상주",
+        "items": [
+          "1:1 자기소개서 & 이력서 첨삭",
+          "실전 대비 1:1 면접 지도",
+          "자습실 주중·주말 개방"
+        ]
+      }
+    ]
+  },
+  "enrollment": {
+    "heading": "지금 바로 웹개발 + 서버자동화 실무 능력을 만들고 풀스택 개발자로 향하는 커리어를 시작하세요",
+    "infoBox": {
+      "items": [
+        {
+          "label": "모집 과정",
+          "value": "DevOps 풀스택 개발자 부트캠프"
+        },
+        {
+          "label": "수강 인원",
+          "value": "30명"
+        },
+        {
+          "label": "교육 시간",
+          "value": "평일 오전 9시 ~ 오후 6시"
+        },
+        {
+          "label": "교육 방법",
+          "value": "오프라인 현장 교육"
+        },
+        {
+          "label": "수강료",
+          "value": {
+            "original": "12,130,560원",
+            "discounted": "0원"
+          }
+        },
+        {
+          "label": "훈련장려금",
+          "value": "매 월 최대 81만 6천원"
+        },
+        {
+          "label": "교육 장소",
+          "value": "서울특별시 강동구 올림픽로 651"
+        }
+      ]
+    },
+    "process": {
+      "heading": "모집 절차",
+      "steps": [
+        {
+          "number": 1,
+          "name": "상담하기",
+          "description": "과정 신청 후 영업일 기준 1-2일 내에 안내"
+        },
+        {
+          "number": 2,
+          "name": "서류 전형",
+          "description": "간단한 자기소개로 본인을 소개"
+        },
+        {
+          "number": 3,
+          "name": "온보딩 캠프",
+          "description": "과정 시작 전 적응을 위한 자리"
+        },
+        {
+          "number": 4,
+          "name": "최종 합격",
+          "description": "합격 발표와 함께 여정 시작"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "heading": "궁금한 점을 모아봤어요!",
+    "subtitle": "자주 묻는 질문",
+    "questions": [
+      {
+        "question": "수강료가 정말 무료인가요?",
+        "answer": "네, 국비지원을 통해 수강료 전액이 무료입니다. 추가로 매 월 최대 81만 6천원의 훈련장려금도 받을 수 있습니다."
+      },
+      {
+        "question": "국민내일배움카드란 무엇인가요?",
+        "answer": "국민내일배움카드는 고용노동부에서 발급하는 카드로, 직업능력개발훈련을 받을 때 사용할 수 있습니다. 카드 발급 후 본 과정에 지원하실 수 있습니다."
+      },
+      {
+        "question": "국민내일배움카드가 없어도 지원할 수 있나요?",
+        "answer": "네, 지원은 가능합니다. 다만 국비지원을 받기 위해서는 국민내일배움카드 발급이 필요합니다. 상담 시 자세한 안내를 받으실 수 있습니다."
+      },
+      {
+        "question": "훈련 장려금은 어떻게 받을 수 있나요?",
+        "answer": "훈련장려금은 출석률과 성적에 따라 지급됩니다. 매 월 최대 81만 6천원까지 받을 수 있으며, 상세한 지급 기준은 교육 시작 시 안내됩니다."
+      },
+      {
+        "question": "비전공자도 수강할 수 있나요?",
+        "answer": "네, 물론입니다. 본 과정 수강생의 70%가 비전공자입니다. 기초부터 차근차근 배울 수 있도록 커리큘럼이 구성되어 있습니다."
+      },
+      {
+        "question": "추가적으로 궁금한 점이 있으신가요?",
+        "answer": "더 궁금한 점이 있으시면 상담 신청을 통해 전문 상담사와 1:1 상담을 받으실 수 있습니다."
+      }
+    ]
+  },
+  "bottomCTA": {
+    "text": "진짜 나에게 맞는 학습 로드맵, 함께 찾아드립니다",
+    "buttonText": "커리어 전문가와 상담하기"
+  },
+  "footer": {
+    "companyInfo": [
+      "대표자: 박병준",
+      "개인정보관리 책임자: 서혁준",
+      "통신판매업 신고번호: 제2020-서울강동-1360호",
+      "사업자등록번호: 212-81-89247",
+      "전화: 02-479-4050",
+      "주소: 서울특별시 강동구 올림픽로 651"
+    ],
+    "socialLinks": [
+      { "name": "블로그", "url": "https://blog.kiweb.or.kr" },
+      { "name": "페이스북", "url": "https://facebook.com/kiweb" },
+      { "name": "유튜브", "url": "https://youtube.com/kiweb" },
+      { "name": "인스타그램", "url": "https://instagram.com/kiweb" }
+    ],
+    "legalLinks": [
+      { "name": "이용약관", "url": "#" },
+      { "name": "개인정보처리방침", "url": "#" },
+      { "name": "환불규정", "url": "#" }
+    ],
+    "relatedSites": [
+      { "name": "디벨로켓", "url": "#" },
+      { "name": "BuD", "url": "#" },
+      { "name": "DevNest", "url": "#" }
+    ],
+    "copyright": "© 2025 Kyungil Game IT Academy. All rights reserved."
+  }
+}
+
