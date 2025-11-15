@@ -5,7 +5,7 @@ export interface TypographyProps {
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'small' | 'tiny';
   color?: 'primary' | 'secondary' | 'tertiary' | 'quaternary';
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -35,7 +35,7 @@ const Typography: React.FC<TypographyProps> = ({
   };
 
   const defaultTag = variant.startsWith('h') ? variant : 'p';
-  const Tag = as || defaultTag;
+  const Tag = (as || defaultTag) as React.ElementType;
 
   return (
     <Tag className={`${variantStyles[variant]} ${colorStyles[color]} ${className}`}>
